@@ -179,6 +179,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    simple_form (5.2.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -223,6 +226,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.5)
   sassc-rails
+  simple_form
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails

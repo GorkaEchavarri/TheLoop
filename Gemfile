@@ -32,6 +32,8 @@ gem "jbuilder"
 
 gem "devise"
 
+gem "simple_form"
+
 gem "bootstrap", "~> 5.2"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
