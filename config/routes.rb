@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :posts
   resources :comments, only: %i[index new create edit update destroy]
   resources :communities
+  resources :users, only: %i[show edit update]
 end
