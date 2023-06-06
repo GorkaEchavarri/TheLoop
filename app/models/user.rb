@@ -11,6 +11,9 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
 
   validates :bio, length: { minimum: 8 }
-  # validates :user_type, inclusion: %w[family patient support]
-  # validates :status, inclusion: %w[in-treatment recovered z]
+  validates :bio, length: { maximum: 2000 }
+
+  validates :user_type, inclusion: %w[circle patient]
+  # validates :status, inclusion: %w[in-treatment recovered]
+
 end
