@@ -1,0 +1,2 @@
+class CommentUpvotesController < ApplicationController
+end
