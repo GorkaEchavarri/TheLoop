@@ -7,6 +7,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates :email, presence: true
+  validates :email, uniqueness: { message: 'An account associated with %{value} already exists' }
+
   validates :username, :bio, presence: true
   validates :username, uniqueness: true
 
