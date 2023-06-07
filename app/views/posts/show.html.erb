@@ -1,0 +1,70 @@
+<h1>POST SHOW HERE</h1>
+
+<div class = "Banner-container d-flex" >
+<%# <needs imagesource directed to community.image>  %>
+  <div class = "button-container w-25">
+    <%# <%button to join%>
+    <%# <%membership number display%>
+  </div>
+
+  <div class = "community-details-container w-75 text-end">
+    <div class = "community_title h-50">
+      <h1><%=@community.title %></h1>
+    </div>
+    <div class = "community_description h-50">
+      <h3><%=@community.description%></h3>
+    </div>
+  </div>
+
+</div>
+
+
+<div class = "posts-body-container" >
+
+  <div class = "post-display">
+    <div class = "poster-info-container d-flex">
+
+      <div class = "avatar w-25">
+      <%# @user.avatar%>
+      </div>
+
+      <div class = "poster-text w-75 d-flex">
+        <div class = "username-and-icons h-50">
+          <div class = "username w-50">
+            <%@user.username%>
+          </div>
+          <div class = "post-icons w-50">
+            <%# <%= link_to edit_user_booking_path(booking.id),
+                { class: "btn btn-sm btn-primary my-1",
+                  data: { turbo_method: :get,
+                          turbo_confirm: "Are you sure you want to change this booking?"}
+                } do%>
+                  < Join Loop >
+              <%# <%end%>
+            < membership.where(community_id == @community.id).length>
+            < tripple dot icon >
+          </div>
+        </div>
+        <div class = "title-container h-50">
+          <%=@post.title%>
+        </div>
+      </div>
+    </div>
+
+    <div class = "content-info-container">
+      <div class = "content-container">
+        <%# add sizing info plox %>
+        <%=@post.content%>
+      </div>
+      <div id = "upvote-container">
+        < spanning upvote action < upvote icon>
+              < Post_upvotes.where(post_id == @post.id).count?>
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class = "commentsgetrenderedhere">
+
+</div>
