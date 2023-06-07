@@ -15,9 +15,22 @@
  */
 
 // Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// Your CSS partials
+@import "components/index";
+@import "components/flex_containers";
+@import "components/btn_devifyd";
+@import "pages/index";
+
+
+// Graphical variables
 
 
 // External libraries
 @import "bootstrap";
+@import "font-awesome";
 
 // Your CSS partials
