@@ -1,2 +1,6 @@
 <h1><%= @community.title %></h1>
 <p><%= @community.description %></p>
+<%= link_to "Delete",
+  community_path(@community),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
