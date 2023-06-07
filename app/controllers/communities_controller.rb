@@ -1,6 +1,5 @@
 class CommunitiesController < ApplicationController
 
-
   def index
     @communities = Community.all
   end
@@ -18,6 +17,22 @@ class CommunitiesController < ApplicationController
     @community.user_id = current_user.id
     @community.save
     redirect_to communities_path
+  end
+
+  def edit
+    @community = Community.find(params[:id])
+  end
+
+  def update
+    @community = Community.find(params[:id])
+    @community.update(community_params)
+    redirect_to community_path(@community)
+  end
+
+  def destroy
+    @community = Community.find(params[:id])
+    @community.destroy
+    redirect_to communities_path, status: :see_other
   end
 
   private
