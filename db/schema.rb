@@ -11,9 +11,12 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_06_06_103624) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comment_upvotes", force: :cascade do |t|
-    t.integer "comment_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "comment_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["comment_id"], name: "index_comment_upvotes_on_comment_id"
@@ -22,8 +25,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_103624) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
-    t.integer "post_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "post_id", null: false
+    t.bigint "user_id", null: false
     t.boolean "is_flag", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -35,7 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_103624) do
     t.string "title"
     t.text "description"
     t.string "category"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -43,8 +46,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_103624) do
   end
 
   create_table "friendships", force: :cascade do |t|
-    t.integer "asker_id"
-    t.integer "receiver_id"
+    t.bigint "asker_id"
+    t.bigint "receiver_id"
     t.boolean "accepted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -53,8 +56,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_103624) do
   end
 
   create_table "memberships", force: :cascade do |t|
-    t.integer "community_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "community_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["community_id"], name: "index_memberships_on_community_id"
@@ -62,8 +65,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_103624) do
   end
 
   create_table "post_upvotes", force: :cascade do |t|
-    t.integer "post_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "post_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_post_upvotes_on_post_id"
@@ -73,8 +76,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_103624) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.integer "community_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "community_id", null: false
+    t.bigint "user_id", null: false
     t.string "image"
     t.boolean "is_flag", default: false
     t.datetime "created_at", null: false
