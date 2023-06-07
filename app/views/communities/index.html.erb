@@ -1,6 +1,16 @@
-<h1>All communities</h1>
-<ul>
-  <% @communities.each do |community| %>
-  <li><%= link_to community.title, community %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <h1>All communities</h1>
+  <br>
+    <div class="row">
+      <% @communities.each do |community| %>
+        <div class="card rounded m-3" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to community.title, community %></h5>
+            <p class="card-text"><%= community.description %></p>
+            <%# <a href="#" class="card-link">Card link</a> %>
+            <%# <a href="#" class="card-link">Another link</a> %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>

@@ -1,7 +1,10 @@
-<h1>Create new community</h1>
-<%= simple_form_for (@community) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :category %>
-  <%= f.submit %>
-<% end %>
+<div class="container col-6">
+  <h1>Create new community</h1>
+  <br>
+  <%= simple_form_for (@community) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :category %>
+    <%= f.submit %>
+  <% end %>
+</div>
