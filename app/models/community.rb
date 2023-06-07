@@ -7,4 +7,5 @@ class Community < ApplicationRecord
   validates :description, length: { minimum: 8 }
   validates :description, length: { maximum: 200 }
 
+  has_many :posts, dependent: :destroy
 end
