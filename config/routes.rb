@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   resources :comments, only: %i[index new create edit update destroy]
   resources :communities
   resources :users, only: %i[index show edit update]
+
+
+
+  get "mycommunities", to: "communities#mycommunities"
 end
