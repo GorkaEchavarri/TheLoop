@@ -1,0 +1,17 @@
+<div class="container">
+<h1>Find Others</h1>
+
+<div class="flex-container justify-content-center">
+<% @users.each do |user| %>
+
+<div class="card align-items-center m-4 p-2 col-2 rounded-4">
+<img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="user avatar pciture" class="avatar-large">
+<p><%= user.first_name%></p>
+<p><%= user.user_type %></p>
+<p><%= user.status %></p>
+<%= link_to "View", user_path(user), class: "btn-ghost"%>
+</div>
+
+<% end %>
+</div>
+</div>

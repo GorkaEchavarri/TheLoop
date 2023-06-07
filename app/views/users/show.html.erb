@@ -1,1 +1,33 @@
-<h1>This is your profile page</h1>
+<div class="container justify-content-center mx-12 p-2 border rounded" style="width:900px">
+<h1 class="m-3">Profile page of <%= @user.username %></h1>
+<div class="container d-flex">
+
+  <div class="container d-flex flex-column col-8">
+    <div class="card">
+    <h3>Bio:</h3>
+    <%= @user.bio %>
+    </div>
+    <br>
+    <div class="card">
+    <p>Recent posts:</p>
+    </div>
+    </div>
+
+    <div class="container d-flex flex-column col-4 justify-content-center">
+      <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="user avatar pciture" class="avatar-large">
+      <%= @user.first_name %>
+      <%= @user.last_name %>
+      <br>
+      <%= @user.date_of_birth %>
+      <%= @user.region %>
+      <br>
+      <%= @user.user_type.capitalize() %>
+      <br>
+      <%= @user.status %>
+      <button type="button" class="btn btn-outline-primary m-1 mx-auto">Add as a friend</button>
+      <button type="button" class="btn btn-outline-primary mx-auto">Direct message</button>
+  </div>
+
+
+</div>
+</div>
