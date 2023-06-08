@@ -42,7 +42,12 @@
                   < Join Loop >
               <%# <%end%>
             < membership.where(community_id == @community.id).length>
-            < tripple dot icon >
+            <%# < tripple dot icon - items here should become drop down icons > %>
+            <% if current_user.id == @post.user_id %>
+              <li class="nav-item">
+            <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "nav-link" %>
+            </li>
+
           </div>
         </div>
         <div class = "title-container h-50">

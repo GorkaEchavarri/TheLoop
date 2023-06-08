@@ -29,7 +29,8 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    #@community_id = @post.community_id and something for user_id?? #<<maybe dont need that?
+    user_id = @booking.profile_id
+    @profile = Profile.find(@profile_id)
   end
 
   def update
