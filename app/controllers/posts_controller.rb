@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: %i[show edit update destroy]
+  before_action :find_post, only: %i[show update edit destroy is_flagged]
 
   def new
     @community = Community.find(params[:community_id])
@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(posts_params)
+    @post = Post.new(post_params)
     @community = Community.find(params[:community_id])
     @post.community_id = @community.id
     @post.user_id = current_user.id
@@ -28,15 +28,26 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
-    #@community_id = @post.community_id and something for user_id?? #<<maybe dont need that?
+    community_id = @post.community_id
+    @community = Community.find(community_id)
   end
 
   def update
-    @post = Post.update(post_params)
+    @post.update(post_params)
+    if @post.save
+      redirect_to post_path(@post), notice: "Post Updated!"
+    else
+      render 'edit', status: :unprocessable_entity
+    end
   end
 
   def destroy
+  end
+
+  def is_flagged
+    @post.is_flag = true
+    @post.save
+    redirect_to post_path(@post), notice: "Post Flagged!"
   end
 
  private
@@ -44,7 +55,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def posts_params
-    params.require(:post).permit(:title, :content, :image, :is_flag)
+  def post_params
+    params.require(:post).permit(:title, :content, :image)
   end
 end

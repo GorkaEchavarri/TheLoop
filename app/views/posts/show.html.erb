@@ -25,7 +25,7 @@
     <div class = "poster-info-container d-flex">
 
       <div class = "avatar w-25">
-      <%# @user.avatar%>
+      <%# @user.avatar%      <%= cl_image_tag @profile.photo.key, height: 250, width: 250, crop: :fill, style: "border-radius: 15px; border: 2px solid #80c5bd;" if @profile.photo.key.present? %>>
       </div>
 
       <div class = "poster-text w-75 d-flex">
@@ -42,7 +42,28 @@
                   < Join Loop >
               <%# <%end%>
             < membership.where(community_id == @community.id).length>
-            < tripple dot icon >
+            <%# < tripple dot icon - items here should become drop down icons > %>
+            <% if current_user.id == @post.user_id %>
+              <li class = "post-hamburger-item">
+                <ul>
+                  <%= link_to edit_post_path, data: { turbo_method: :get, turbo_confirm: "Are you sure to edit?"} do %>
+                    Edit This Post
+                  <%end%>
+                </ul>
+
+                <ul>
+                  <%= link_to "Delete This Post",  data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"} %>
+                </ul>
+
+              </li>
+            <%else%>
+              <li class = "post-hamburger-item">
+                <ul> <%= link_to flag_post_path(@post), data: { turbo_method: :patch, turbo_confirm: "Are you sure you want to flag this post?"} do %>
+                  Flag this Post
+                <%end%>
+                </ul>
+              </li>
+            <% end %>
           </div>
         </div>
         <div class = "title-container h-50">
@@ -57,9 +78,9 @@
         <%=@post.content%>
       </div>
       <div id = "upvote-container">
-        < spanning upvote action < upvote icon>
+        <%# < spanning upvote action < upvote icon>
               < Post_upvotes.where(post_id == @post.id).count?>
-        >
+        > %>
       </div>
     </div>
   </div>
