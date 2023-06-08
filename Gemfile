@@ -66,3 +66,7 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+gem "font-awesome-sass", "~> 6.1"
+
+gem "autoprefixer-rails"
