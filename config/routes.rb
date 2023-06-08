@@ -11,8 +11,15 @@ Rails.application.routes.draw do
     #  resources :comments, only: %i[index new create edit update destroy]
     # end
   end
+
   resources :users, only: %i[show edit update]
-  resources :posts, only: %i[show edit update] do
+
+  
+  resources :posts, only: %i[show edit update destroy] do
     resources :comments, only: %i[index new create edit update destroy]
   end
+
+  patch "posts/:id/flag", to: "posts#is_flagged", as: :flag_post
+  get "mycommunities", to: "communities#mycommunities"
+
 end

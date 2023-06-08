@@ -1,7 +1,7 @@
-<h1>This should be where the form goes!</h1>
+<h1>Submit A New Post In <%@community.title%></h1>
 <%= simple_form_for [@community, @post] do |f| %>
   <%= f.input :title %>
   <%= f.input :content %>
-  <%= f.input :photo, as: :file, label: "Upload a picture of yourself" %>
+  <%= f.input :photo, as: :file, label: "Upload a picture for your post" %>
   <%= f.submit %>
 <% end %>

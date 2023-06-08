@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%= link_to "../mycommunities", class: "navbar-brand" do %>
+      <%= image_tag "https://res.cloudinary.com/dgqqot40q/image/upload/v1686219245/TheLoop/THE_LOOP_O_blood_red_vhlyvd.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,7 @@
             <%= link_to "Home", "#", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+            <%= link_to "Users", "../users", class: "nav-link" %>
           </li>
 
           <li class="nav-item">
@@ -23,7 +23,11 @@
           </li>
 
           <li >
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+          <% if current_user.photo.key%>
+            <%= cl_image_tag current_user.photo.key, height: 45, width: 45, crop: :fill, style: "border-radius: 50%;"%>
+            <% else %>
+            <img src="https://res.cloudinary.com/dgqqot40q/image/upload/v1686230942/TheLoop/placeholder_hfuoup.png" alt="A placeholder profile picture" height="45" width="45">
+            <% end %>
           </li>
 
         <% else %>
