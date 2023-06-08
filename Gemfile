@@ -10,7 +10,7 @@ gem "rails", "~> 7.0.5"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "pg"
+gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -35,6 +35,10 @@ gem "devise"
 gem "simple_form"
 
 gem "bootstrap", "~> 5.2"
+
+gem "dotenv-rails"
+
+gem "cloudinary"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"

@@ -16,9 +16,9 @@ class User < ApplicationRecord
   validates :bio, length: { minimum: 8 }
   validates :bio, length: { maximum: 2000 }
 
-  validates :user_type, inclusion: %w[circle in-treatment recovered]
+  validates :user_type, inclusion: %w[Circle In-treatment Recovered]
   # Remeber to add in the new user page a stimulus for in-treatment users to add their illness.
 
   # validates :status, inclusion: %w[in-treatment recovered]
-
+  has_one_attached :photo
 end

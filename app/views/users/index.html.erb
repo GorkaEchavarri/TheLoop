@@ -5,11 +5,19 @@
 <% @users.each do |user| %>
 
 <div class="card align-items-center m-4 p-2 col-2 rounded-4">
-<img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="user avatar pciture" class="avatar-large">
-<p><%= user.first_name%></p>
-<p><%= user.user_type %></p>
-<p><%= user.status %></p>
-<%= link_to "View", user_path(user), class: "btn-ghost"%>
+  <% if user.photo.key %>
+    <%= cl_image_tag user.photo.key, height: 90, width: 90, crop: :fill, style: "border-radius: 50%;" if user.photo.key.present? %>
+  <% else %>
+    <img src="https://res.cloudinary.com/dgqqot40q/image/upload/v1686230942/TheLoop/placeholder_hfuoup.png" alt="A placeholder profile picture" height="90" width="90">
+  <% end %>
+  <p><%= user.first_name%></p>
+  <p><%= user.user_type %></p>
+  <% if user.status %>
+  <p><%= user.status %></p>
+    <% else %>
+      <br>
+  <% end %>
+  <%= link_to "View", user_path(user), class: "btn-ghost"%>
 </div>
 
 <% end %>

@@ -35,6 +35,9 @@ class CommunitiesController < ApplicationController
     redirect_to communities_path, status: :see_other
   end
 
+  def mycommunities
+  end
+
   private
 
   def community_params
