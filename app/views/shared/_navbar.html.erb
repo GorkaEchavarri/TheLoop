@@ -23,7 +23,11 @@
           </li>
 
           <li >
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+          <% if current_user.photo.key%>
+            <%= cl_image_tag current_user.photo.key, height: 45, width: 45, crop: :fill, style: "border-radius: 50%;"%>
+            <% else %>
+            <img src="https://res.cloudinary.com/dgqqot40q/image/upload/v1686230942/TheLoop/placeholder_hfuoup.png" alt="A placeholder profile picture" height="45" width="45">
+            <% end %>
           </li>
 
         <% else %>
