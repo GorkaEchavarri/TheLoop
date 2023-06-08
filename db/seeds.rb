@@ -19,11 +19,11 @@ Post.destroy_all
 # create 8 users
 puts "creating users"
 
-file = File.open("./db/images/User1.jpg")
+file = File.open("/db/images/User1.jpg")
 user1 = User.create!(email: "leonardo@dicaprio.com", password: "leo123", first_name: "Leonardo", last_name: "DiCaprio", username: "LeoDiCap", bio: "Testing bio description testing testing", user_type: "In-treatment", status: "Colon Cancer", date_of_birth: "11/11/74", region: "United States")
 user1.photo.attach(io: file, filename: "User1.jpg", content_type: "images/jpg")
 user1.save!
-
+puts "creating user 2"
 file2 = File.open("./db/images/User2.jpg")
 user2 = User.create(email: "j@lewagon.com", password: "123456", first_name: "James", last_name: "McAvoy", username: "Jamesy360", bio: "Testing bio description testing testing", user_type: "Circle", status: "Testicular Cancer", date_of_birth: "15/06/97", region: "England")
 user2.photo.attach(io: file2, filename: "User2.jpg", content_type: "images/jpg")
