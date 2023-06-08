@@ -1,15 +1,37 @@
 <div class="container">
-  <h1><%= @community.title %></h1>
-  <p><%= @community.description %></p>
-  <%= link_to "Edit",
-    edit_community_path(@community)
-  %>
-  <%= link_to "Delete",
-    community_path(@community),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
-  <br>
-  <%= link_to "All communities",
-    communities_path
-  %>
+  <div class="card mb-4">
+      <div class="card-body">
+        <h1><%= @community.title %></h1>
+        <p><%= @community.description %></p>
+
+
+        <%= link_to "Edit",
+          edit_community_path(@community)
+        %>
+        <%= link_to "Delete",
+          community_path(@community),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
+        <br>
+        <%= link_to "All communities",
+          communities_path
+        %>
+
+
+      </div>
+    </div>
+
+  <% @posts.each do |post| %>
+    <% if post.community_id == @community.id %>
+      <div class="card text-bg-light">
+        <div class="card-body">
+          <h3><%= link_to post.title, post_path(post) %></h3>
+
+          <%= post.content %>
+
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
 </div>

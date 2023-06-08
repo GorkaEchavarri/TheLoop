@@ -86,7 +86,20 @@
     </div>
   </div>
 </div>
-
+<br>
 <div class = "commentsgetrenderedhere">
-
+<h2>All comments</h2>
+  <% @post.comments.each do |comment| %>
+  <div class="card mb-3">
+    <div class="card-body">
+      <%= comment.user.username %>
+      <br>
+      <%= comment.content %>
+      <%= link_to "Delete",
+      post_comment_path(@post, comment),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+    </div>
+  </div>
+<% end %>
 </div>
