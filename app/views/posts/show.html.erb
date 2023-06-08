@@ -25,7 +25,7 @@
     <div class = "poster-info-container d-flex">
 
       <div class = "avatar w-25">
-      <%# @user.avatar%      <%= cl_image_tag @profile.photo.key, height: 250, width: 250, crop: :fill, style: "border-radius: 15px; border: 2px solid #80c5bd;" if @profile.photo.key.present? %>>
+      <%# @user.avatar%      <%= cl_image_tag @user.photo.key, height: 250, width: 250, crop: :fill, style: "border-radius: 15px; border: 2px solid #80c5bd;" if @user.photo.key.present? %>>
       </div>
 
       <div class = "poster-text w-75 d-flex">
@@ -34,10 +34,9 @@
             <%@user.username%>
           </div>
           <div class = "post-icons w-50">
-            <%# <%= link_to edit_user_booking_path(booking.id),
+            <%# <%= link_to create membership path (@community),
                 { class: "btn btn-sm btn-primary my-1",
-                  data: { turbo_method: :get,
-                          turbo_confirm: "Are you sure you want to change this booking?"}
+                  data: { turbo_method: :post,}
                 } do%>
                   < Join Loop >
               <%# <%end%>
@@ -52,7 +51,9 @@
                 </ul>
 
                 <ul>
-                  <%= link_to "Delete This Post",  data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"} %>
+                  <%= link_to delete_post_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this post?"} do %>
+                  Delete This post
+                  <%end%>
                 </ul>
 
               </li>
