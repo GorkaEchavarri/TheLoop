@@ -20,5 +20,5 @@ class User < ApplicationRecord
   # Remeber to add in the new user page a stimulus for in-treatment users to add their illness.
 
   # validates :status, inclusion: %w[in-treatment recovered]
-
+  has_one_attached :photo
 end

@@ -1,4 +1,6 @@
 <br>
+<%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+
 <div class="container justify-content-center mx-12 p-2 border rounded" style="width:900px">
 <h1 class="m-3">Profile page of <%= @user.username %></h1>
 <div class="container d-flex">

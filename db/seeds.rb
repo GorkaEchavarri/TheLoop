@@ -50,7 +50,7 @@ user6.photo.attach(io: file6, filename: "User6.jpeg", content_type: "images/jpeg
 user6.save!
 
 file7 = File.open("./db/images/User7.png")
-user7 = User.create(email: "leonardo@dicaprio.com", password: "leo123", first_name: "Leonardo", last_name: "DiCaprio", username: "LeoDiCap", bio: "Testing bio description testing testing", user_type: "Circle", date_of_birth: "11/11/74", region: "United States")
+user7 = User.create(email: "adamondra@lewagon.com", password: "adam123", first_name: "Adam", last_name: "Ondra", username: "AdamO", bio: "Testing bio descrmything sting someing", user_type: "Circle", date_of_birth: "11/11/91", region: "United States")
 user7.photo.attach(io: file7, filename: "User7.png", content_type: "images/png")
 user7.save!
 
