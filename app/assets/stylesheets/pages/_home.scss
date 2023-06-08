@@ -1,1 +1,73 @@
-// Specific CSS for your home-page
+
+#fullpage {
+  background-color: #FFC2CC;
+}
+#firstsection {
+  background-color: #ffffff;
+  padding: auto;
+  margin-bottom: 50px;
+  margin-bottom: 50px; /* Add this line to increase the bottom margin */
+}
+
+
+// logo image
+#home-container {
+  img {
+    max-width: 100%;
+  }
+}
+
+// "a space for anyone text"
+#herotext {
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px !important;
+  margin-bottom: 30px !important;
+  margin-top: 20px !important;
+  font-style: italic;
+  line-height: 1.5; /* Adjust the value to increase or decrease line spacing */
+}
+
+// get in text
+.h1-large {
+  color: #FF000A;
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+  font-size: 60px !important;
+}
+
+#getin {
+  margin-top: 210px;
+  margin-bottom: -40px;
+}
+
+#explanation {
+  margin-top: 200px;
+  margin-bottom: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+#explanation-text {
+  color: #FFC2CC;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 30px !important;
+  padding-bottom: 20px;
+  padding-top: 100px !important;
+}
+
+#explanation-text1 {
+  color: #FFC2CC;
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px !important;
+  padding-bottom: 20px;
+padding-top: -10px;
+}
+
+#footer {
+  color: #ffffff;
+  margin-top: 300px;
+  text-align: center !important;
+  width: 100% !important;
+  }

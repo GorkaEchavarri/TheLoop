@@ -1,0 +1,76 @@
+body{
+  margin-top:20px;
+  background:#FAFAFA;
+}
+.order-card {
+  color: #fff;
+}
+
+.bg-c-blue {
+  background: linear-gradient(45deg,#FFC2CC,#fedae0) !important;
+}
+
+.bg-c-green {
+  background: linear-gradient(45deg,#FFC2CC,#fedae0)!important;
+}
+
+.bg-c-yellow {
+  background: linear-gradient(45deg,#FFC2CC,#fedae0)!important;
+}
+
+.bg-c-pink {
+  background: linear-gradient(45deg,#FFC2CC,#fedae0)!important;
+}
+
+
+#carded1 {
+  border-radius: 30px !important;
+}
+
+#circle1 {
+  height: 20px !important;
+  width: 20px !important;
+  font-size: 40px;
+}
+
+#carded2 {
+
+  border-radius: 30px !important;
+}
+
+#carded3 {
+  border-radius: 30px !important;
+}
+
+#carded4 {
+  border-radius: 30px !important;
+}
+
+.card {
+  border-radius: 55px;
+  border: none;
+  margin-bottom: 150px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+
+}
+
+.card .card-block {
+  padding: 25px;
+}
+
+.order-card i {
+  font-size: 26px;
+}
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+
+#landingcards {
+padding-bottom: 100px;
+}
