@@ -71,8 +71,10 @@
 
 <div>
      <%= f.label :avatar %> <br/>
-     <%= f.text_field :avatar, autofocus: true %>
+     <%= f.input :photo, as: :file, label: "Upload a picture of yourself" %>
 </div>
+
+
 <br>
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
