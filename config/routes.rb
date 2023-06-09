@@ -19,6 +19,9 @@ Rails.application.routes.draw do
     resources :comments, only: %i[index new create edit update]
   end
 
+  get "communities/:id", to:"posts#new"
+  post "communities/:id/post", to:"posts#create"
+
   patch "posts/:id/flag", to: "posts#is_flagged", as: :flag_post
   delete "post/:id", to: "posts#destroy", as: :delete_post
 

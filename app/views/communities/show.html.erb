@@ -23,12 +23,17 @@
 
   <%= render "shared/banner"%>
 
-<div class="container">
+  <div class = "new form mx-5">
+    <%= render "posts/new"%>
+  </div>
+
+
+<div class="containerish mx-5">
 
   <% @posts.each do |post| %>
     <% if post.community_id == @community.id %>
-      <div class="card text-bg-light">
-        <div class="card-body">
+      <div class= "card my-2 text-bg-light d-flex flex-row">
+        <div class= "card-body my-2">
           <h3><%= link_to post.title, post_path(post) %></h3>
 
           <%= post.content %>
@@ -37,6 +42,29 @@
             <%= cl_image_tag post.photo.key, height: 300, width: 300, crop: :fill, style: "border-radius: 15px" if post.photo.key.present?%>
           </div>
 
+        </div>
+        <div class = "crud-buttons-n-stuff">
+          <div class = "post-icons">
+          <% if current_user.id == post.user_id %>
+              <div class = "post-hamburger-item">
+
+                  <%= link_to edit_post_path, data: { turbo_method: :get, turbo_confirm: "Are you sure to edit?"} do %>
+                    Edit This Post
+                  <%end%>
+
+                  <%= link_to delete_post_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this post?"} do %>
+                  Delete This post
+                  <%end%>
+
+              </div>
+            <%else%>
+             <div class = "post-hamburger-item">
+                <%= link_to flag_post_path(post), data: { turbo_method: :patch, turbo_confirm: "Are you sure you want to flag this post?"} do %>
+                  Flag this Post
+                <%end%>
+            </div>
+          <% end %>
+          </div>
         </div>
       </div>
     <% end %>

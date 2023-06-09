@@ -1,7 +1,7 @@
-<div class = "container">
-<div class = "posts-body-container" >
+<%=render "shared/banner"%>
+<div class = "posts-body-container mx-5" >
 
-  <%=render "shared/banner"%>
+
 
   <div class = "post-display mt-5">
     <div class = "poster-info-container d-flex">
@@ -16,26 +16,24 @@
 
       <div class = "post-icons w-25">
           <% if current_user.id == @post.user_id %>
-              <li class = "post-hamburger-item">
-                <ul>
+              <div class = "post-hamburger-item">
+
                   <%= link_to edit_post_path, data: { turbo_method: :get, turbo_confirm: "Are you sure to edit?"} do %>
                     Edit This Post
                   <%end%>
-                </ul>
-                <ul>
+
                   <%= link_to delete_post_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this post?"} do %>
                   Delete This post
                   <%end%>
-               </ul>
-              </li>
+              </div>
             <%else%>
-             <li class = "post-hamburger-item">
-              <ul>
+             <div class = "post-hamburger-item">
+
                 <%= link_to flag_post_path(@post), data: { turbo_method: :patch, turbo_confirm: "Are you sure you want to flag this post?"} do %>
                   Flag this Post
                 <%end%>
-              </ul>
-            </li>
+              </div>
+
           <% end %>
       </div>
     </div>
@@ -66,12 +64,12 @@
 <br>
 <br>
 <br>
-
+<div class = "container">
 <div class = "commentsgetrenderedhere mt-5">
 
   <h2>All comments</h2>
     <% @post.comments.each do |comment| %>
-      <div class="card mb-1 w-75">
+      <div class="card mb-1">
         <div class="card-body">
           <%= comment.user.username %>
           <br>
@@ -79,7 +77,7 @@
 
         </div>
       </div>
-      <div class = "buttons-here w-25">
+      <div class = "buttons-here">
         <%= link_to "Delete",
             delete_comment_path(comment),
             data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if current_user.id == comment.user_id
@@ -88,10 +86,9 @@
 <% end %>
 </div>
 
-
-  <div>
+</div>
+<div>
     <%= link_to community_path(@community), { class: "member-info btn my-5" } do %>
       Back To <%=@community.title%>
     <% end %>
-  </div>
 </div>
