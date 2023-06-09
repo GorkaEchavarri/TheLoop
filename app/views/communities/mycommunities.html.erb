@@ -1,8 +1,21 @@
 <h2>Popular Loops</h2>
+<%# <br>
 <br>
-<br>
-<br>
-<%= link_to "All Loops", "/communities", class: "btn btn-outline-success" %>
-<br>
-<br>
+<br> %>
+<%# <%= link_to "All Loops", "/communities", class: "btn btn-outline-success" %>
+<div class="row my-5">
+      <% @communities.each do |community| %>
+        <div class="card rounded m-3" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to community.title, community %></h5>
+            <p class="card-text"><%= community.description %></p>
+            <%# <a href="#" class="card-link">Card link</a> %>
+            <%# <a href="#" class="card-link">Another link</a> %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+<%# <br>
+<br> %>
 <h2>Your Loops</h2>
+<h4> <%= link_to "You've not subscribed to any Loops yet :c See all Loops?", "/communities" %></h4>
