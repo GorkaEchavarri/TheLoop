@@ -100,8 +100,8 @@ comm5.save!
 
 #for demo
 
-com6 = Community.create!(title: "Gorka Support Group", description: "This is a community for people who love and suport Gorka", user_id: 10)
-com6.save!
+Community.create!(title: "Gorka Support Group", description: "This is a community for people who love and suport Gorka", user_id: 10)
+
 puts "Loop for demo created"
 
 puts "creating posts"
