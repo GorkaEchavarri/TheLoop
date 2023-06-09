@@ -64,23 +64,21 @@
   </div>
 </div>
 <br>
-
-
-
-
+<br>
+<br>
 
 <div class = "commentsgetrenderedhere mt-5">
-<h2>All comments</h2>
-  <% @post.comments.each do |comment| %>
-  <div class="card mb-3">
-    <div class="card-body">
-      <%= comment.user.username %>
-      <br>
-      <%= comment.content %>
-      <%= link_to "Delete",
-      post_comment_path(@post, comment),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if current_user.id == comment.user_id
-    %>
+  <h2>All comments</h2>
+    <% @post.comments.each do |comment| %>
+      <div class="card mb-3">
+        <div class="card-body">
+          <%= comment.user.username %>
+          <br>
+          <%= comment.content %>
+          <%= link_to "Delete",
+            delete_comment_path(comment),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if current_user.id == comment.user_id
+          %>
     </div>
   </div>
 <% end %>

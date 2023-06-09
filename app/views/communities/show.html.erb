@@ -1,33 +1,41 @@
-<div class="container">
-  <div class="card mb-4">
+
+  <%# <div class="card mb-4">
       <div class="card-body">
-        <h1><%= @community.title %></h1>
-        <p><%= @community.description %></p>
+        <h1><%= @community.title </h1>%>
+        <%# <p><%= @community.description </p>%>
 
 
-        <%= link_to "Edit",
+        <%# <%= link_to "Edit",
           edit_community_path(@community)
         %>
-        <%= link_to "Delete",
+        <%# <%= link_to "Delete",
           community_path(@community),
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
         %>
-        <br>
+        <%# <br>
         <%= link_to "All communities",
           communities_path
         %>
 
 
-      </div>
-    </div>
+      <%# </div> %>
+  <%# </div> %>
+
+  <%= render "shared/banner"%>
+
+<div class="container mt-5">
 
   <% @posts.each do |post| %>
     <% if post.community_id == @community.id %>
-      <div class="card text-bg-light">
+      <div class="card text-bg-light mt-2">
         <div class="card-body">
           <h3><%= link_to post.title, post_path(post) %></h3>
 
           <%= post.content %>
+
+          <div class= "show-me-photo d-flex flex-column align-items-center">
+            <%= cl_image_tag post.photo.key, height: 300, width: 300, crop: :fill, style: "" if post.photo.key.present?%>
+          </div>
 
         </div>
       </div>

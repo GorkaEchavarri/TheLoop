@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_post, only: %i[new show create destroy]
+  before_action :set_post, only: %i[new show create]
 
   def new
     @comment = Comment.new
@@ -18,6 +18,8 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
+    @post_id = @comment.post_id
+    @post = Post.find(@post_id)
     @comment.destroy
     redirect_to post_path(@post), status: :see_other, notice: "Comment Destroyed!"
   end
