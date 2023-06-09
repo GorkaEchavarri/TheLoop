@@ -90,7 +90,10 @@ Community.create!(title: "Exercise", description: "This is a community for young
 Community.create!(title: "More Exercise", description: "This is a community for young people exercising even more with cancer", user_id:5)
 
 #for demo
-Community.create!(title: "Gorka Support Group", description: "This is a community for people who love and suport Gorka", user_id: 10)
+puts "creating Loop for demo:"
+com6 = Community.create!(title: "Gorka Support Group", description: "This is a community for people who love and suport Gorka", user_id: 10)
+com6.save!
+puts "Loop for demo created"
 
 puts "creating posts"
 
