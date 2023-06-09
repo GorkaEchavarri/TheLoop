@@ -1,0 +1,11 @@
+<h1>Flagged content</h1>
+
+<h2>Flagged posts</h2>
+
+<% @posts.each do |post| %>
+  <% if post.is_flag == true %>
+    <%= post.title %>
+  <% end %>
+<% end %>
+
+<h2>Flagged comments</h2>

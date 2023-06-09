@@ -21,5 +21,5 @@ Rails.application.routes.draw do
   patch "posts/:id/flag", to: "posts#is_flagged", as: :flag_post
   delete "post/:id", to: "posts#destroy", as: :delete_post
   get "mycommunities", to: "communities#mycommunities"
-
+  get "flags", to: "posts#flags"
 end
