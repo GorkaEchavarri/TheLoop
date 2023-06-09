@@ -1,81 +1,59 @@
-<h1>POST SHOW HERE</h1>
-
-<div class = "Banner-container d-flex" >
-<%# <needs imagesource directed to community.image>  %>
-  <div class = "button-container w-25">
-    <%# <%button to join%>
-    <%# <%membership number display%>
-  </div>
-
-  <div class = "community-details-container w-75 text-end">
-    <div class = "community_title h-50">
-      <h1><%=@community.title %></h1>
-    </div>
-    <div class = "community_description h-50">
-      <h3><%=@community.description%></h3>
-    </div>
-  </div>
-
-</div>
-
-
 <div class = "posts-body-container" >
 
-  <div class = "post-display">
+  <%=render "shared/banner"%>
+
+
+  <div class = "post-display mt-5">
     <div class = "poster-info-container d-flex">
 
       <div class = "avatar w-25">
-      <%# @user.avatar%      <%= cl_image_tag @profile.photo.key, height: 250, width: 250, crop: :fill, style: "border-radius: 15px; border: 2px solid #80c5bd;" if @profile.photo.key.present? %>>
+        <%= cl_image_tag @user.photo.key, height: 100, width: 100, crop: :fill, style: "border-radius: 50% ; border: 2px solid #80c5bd;" if @user.photo.key.present? %>
       </div>
 
-      <div class = "poster-text w-75 d-flex">
-        <div class = "username-and-icons h-50">
-          <div class = "username w-50">
-            <%@user.username%>
-          </div>
-          <div class = "post-icons w-50">
-            <%# <%= link_to edit_user_booking_path(booking.id),
-                { class: "btn btn-sm btn-primary my-1",
-                  data: { turbo_method: :get,
-                          turbo_confirm: "Are you sure you want to change this booking?"}
-                } do%>
-                  < Join Loop >
-              <%# <%end%>
-            < membership.where(community_id == @community.id).length>
-            <%# < tripple dot icon - items here should become drop down icons > %>
-            <% if current_user.id == @post.user_id %>
+      <div class = "username w-50">
+        <h3><%= @user.username%></h3>
+      </div>
+
+      <div class = "post-icons w-25">
+          <% if current_user.id == @post.user_id %>
               <li class = "post-hamburger-item">
                 <ul>
                   <%= link_to edit_post_path, data: { turbo_method: :get, turbo_confirm: "Are you sure to edit?"} do %>
                     Edit This Post
                   <%end%>
                 </ul>
-
                 <ul>
-                  <%= link_to "Delete This Post",  data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"} %>
-                </ul>
-
+                  <%= link_to delete_post_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this post?"} do %>
+                  Delete This post
+                  <%end%>
+               </ul>
               </li>
             <%else%>
-              <li class = "post-hamburger-item">
-                <ul> <%= link_to flag_post_path(@post), data: { turbo_method: :patch, turbo_confirm: "Are you sure you want to flag this post?"} do %>
+             <li class = "post-hamburger-item">
+              <ul>
+                <%= link_to flag_post_path(@post), data: { turbo_method: :patch, turbo_confirm: "Are you sure you want to flag this post?"} do %>
                   Flag this Post
                 <%end%>
-                </ul>
-              </li>
-            <% end %>
-          </div>
-        </div>
-        <div class = "title-container h-50">
-          <%=@post.title%>
+              </ul>
+            </li>
+          <% end %>
+      </div>
+    </div>
+
+      <div class = "poster-text">
+        <div class = "title-container">
+          <h2><%=@post.title%></h2>
         </div>
       </div>
     </div>
 
-    <div class = "content-info-container">
+    <div class = "content-info-container mt-3">
       <div class = "content-container">
-        <%# add sizing info plox %>
         <%=@post.content%>
+      </div>
+
+      <div class= "show-me-photo">
+      <%= cl_image_tag @post.photo.key, height: 100, width: 100, crop: :fill, style: "border: 2px solid #80c5bd;" if @post.photo.key.present?%>
       </div>
       <div id = "upvote-container">
         <%# < spanning upvote action < upvote icon>
@@ -86,7 +64,12 @@
   </div>
 </div>
 <br>
-<div class = "commentsgetrenderedhere">
+
+
+
+
+
+<div class = "commentsgetrenderedhere mt-5">
 <h2>All comments</h2>
   <% @post.comments.each do |comment| %>
   <div class="card mb-3">
@@ -96,7 +79,7 @@
       <%= comment.content %>
       <%= link_to "Delete",
       post_comment_path(@post, comment),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if current_user.id == comment.user_id
     %>
     </div>
   </div>
