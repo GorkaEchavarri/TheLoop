@@ -33,6 +33,7 @@ body{
   box-shadow: 0px !important;
   border-width: 0px;
   border-style: none !important;
+  color: black !important;
 }
 
 #carded2 {
@@ -54,7 +55,7 @@ body{
   color: black !important;
 }
 
-.card {
+.custom-card  {
   border-radius: 55px;
   border: none;
   margin-bottom: 150px;
@@ -63,7 +64,7 @@ body{
 
 }
 
-.card .card-block {
+.custom-card  .card-block {
   padding: 25px;
 }
 
