@@ -99,15 +99,10 @@ comm5 = Community.create!(title: "More Exercise", description: "This is a commun
 comm5.save!
 
 #for demo
-<<<<<<< HEAD
-puts "creating Loop for demo:"
+
 com6 = Community.create!(title: "Gorka Support Group", description: "This is a community for people who love and suport Gorka", user_id: 10)
 com6.save!
 puts "Loop for demo created"
-=======
-comm6 = Community.create!(title: "Gorka Support Group", description: "This is a community for people who love and suport Gorka", user_id: 10)
-comm6.save!
->>>>>>> da9f7272d98918c7fd658eebe38685e087c14793
 
 puts "creating posts"
 
