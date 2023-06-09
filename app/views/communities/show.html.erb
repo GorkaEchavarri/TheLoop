@@ -23,18 +23,18 @@
 
   <%= render "shared/banner"%>
 
-<div class="container mt-5">
+<div class="container">
 
   <% @posts.each do |post| %>
     <% if post.community_id == @community.id %>
-      <div class="card text-bg-light mt-2">
+      <div class="card text-bg-light">
         <div class="card-body">
           <h3><%= link_to post.title, post_path(post) %></h3>
 
           <%= post.content %>
 
-          <div class= "show-me-photo d-flex flex-column align-items-center">
-            <%= cl_image_tag post.photo.key, height: 300, width: 300, crop: :fill, style: "" if post.photo.key.present?%>
+          <div class= "show-me-photo d-flex flex-column align-items-center mt-3">
+            <%= cl_image_tag post.photo.key, height: 300, width: 300, crop: :fill, style: "border-radius: 15px" if post.photo.key.present?%>
           </div>
 
         </div>
