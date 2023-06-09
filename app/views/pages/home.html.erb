@@ -1,7 +1,19 @@
 
 <%# #hero section %>
 <%# <div class="container-fluid vh-100" style="background-color: #FFC2CC;"> %>
-<Main id="fullpage">
+<Main id="fullpage" data-controller='home'>
+  <div class="menuButton" data-action='click->home#toggleMenu'>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="menu-items" data-home-target='menu'>
+    <li>Community</li>
+    <li>Contact</li>
+    <li>Why</li>
+  </div>
+
   <div class="d-flex">
     <header>
         <div class="container" id="home-container">
@@ -9,13 +21,13 @@
             <div class="col-lg-12 col-xl-8">
               <div class="text-container">
                 <div class="col-sm-9 mb-8 p-12">
-                  <h4 class="herotoptext" id="herotext">A space for anyone impacted by cancer.<br>Speak to someone who's been in your shoes.</br></h4>
+                  <h4 class="herotoptext d-none" id="herotext">A place for anyone impacted by Cancer, whether you have been diagnosed or are supporting a loved one.</br></h4>
                 </div>
                 <div class="col-sm-9 mb-8 p-12" id="getin">
                   <h1 class="h1-large">Get in</h1>
                 </div>
                 <div>
-                  <a class="me-lg-3 mb-4 mb-lg-0" href="/communities">
+                  <a class="me-lg-3 mb-lg-0" href="/communities">
                 </div>
                 <%= link_to communities_path do %>
                 <div>
@@ -39,6 +51,7 @@
             <div class="row">
               <div>
                   <h4 id="explanation-text">Community</h4>
+                  <%= image_tag('community.png', alt: 'community', size: '150x150') %>
                 </div>
             </div>
         </div>
@@ -51,7 +64,7 @@
     <div id="landingcards" class="container">
       <div class="row">
           <div class="col-md-4 col-xl-3">
-              <div id="carded1" class="card bg-c-pink order-card rounded">
+              <div id="carded1" class="card bg-c-pink rounded">
                   <div class="card-block">
                       <h6 class="m-b-20">What can I eat when feeling nauseous?</h6>
                       <p class="m-b-0">Hey, I just wanted to ask if anyone had any tips for cooking and eating when feeling off?</p>
@@ -116,6 +129,53 @@
   </section>
 
 
+  <div  id="values">
+  <div id="value">
+        <div>
+            <div class="row">
+                <div>
+                    <h4 id="value2">Why Join The Loop?</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="value">
+      <div>
+          <div class="row">
+              <div>
+                  <h4 id="value1">Talk to people in your shoes.</h4>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div id="value">
+      <div>
+          <div class="row">
+              <div>
+                  <h4 id="value1">Share what works.</h4>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div id="value">
+        <div>
+            <div class="row">
+                <div>
+                    <h4 id="value1">Help others.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="value">
+        <div>
+            <div class="row">
+                <div>
+                    <h4 id="value1">Get advice.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
 
 
   <%# #footer %>

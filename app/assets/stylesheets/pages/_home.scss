@@ -1,14 +1,57 @@
 
 #fullpage {
+  position: relative;
   background-color: #FFC2CC;
 }
 #firstsection {
   background-color: #ffffff;
   padding: auto;
   margin-bottom: 50px;
-  margin-bottom: 50px; /* Add this line to increase the bottom margin */
+  margin-bottom: 50px;
 }
 
+.menu-items {
+  list-style-type: none;
+  margin-bottom: -50px;
+  padding-left: 24px;
+  width: fit-content;
+  opacity: 0;
+  transition: opacity .5s ease;
+  &.active {
+    opacity: 1;
+  }
+  li {
+    font-size: 90px;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 5px; /* Adjust the value as needed */
+    font-family: "Open Sans", sans-serif;
+    color: #FF000A;
+    margin-bottom: -30px;
+  }
+
+}
+
+.menuButton {
+  margin-top: 10px;
+  position: absolute;
+  right: 40px;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  row-gap: 8px;
+  padding: 5px;
+
+  span {
+    height: 12px;
+    border-radius: 25px;
+    width: 58px;
+    background-color: #FF000A;
+  }
+}
 
 // logo image
 #home-container {
@@ -25,20 +68,25 @@
   margin-bottom: 30px !important;
   margin-top: 20px !important;
   font-style: italic;
-  line-height: 1.5; /* Adjust the value to increase or decrease line spacing */
+  line-height: 1.5;
 }
-
 // get in text
 .h1-large {
   color: #FF000A;
   font-family: "Open Sans", sans-serif;
   font-style: italic;
-  font-size: 60px !important;
+  font-size: 90px !important;
+  margin-top: 10px;
+  margin-bottom: -40px;
 }
 
 #getin {
-  margin-top: 210px;
+  margin-top: 10px;
   margin-bottom: -40px;
+  h1 {
+    margin-top: 30px;
+    margin-bottom: 20px !important;
+  }
 }
 
 #explanation {
@@ -51,8 +99,8 @@
 #explanation-text {
   color: #FFC2CC;
   font-family: "Open Sans", sans-serif;
-  font-weight: 600;
-  font-size: 30px !important;
+  font-weight: 650;
+  font-size: 130px !important;
   padding-bottom: 20px;
   padding-top: 100px !important;
 }
@@ -62,7 +110,8 @@
   font-family: "Open Sans", sans-serif;
   font-size: 30px !important;
   padding-bottom: 20px;
-padding-top: -10px;
+  padding-top: -10px;
+  text-align: center;
 }
 
 #footer {
@@ -70,4 +119,5 @@ padding-top: -10px;
   margin-top: 300px;
   text-align: center !important;
   width: 100% !important;
-  }
+
+}
