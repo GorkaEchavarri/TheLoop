@@ -9,14 +9,17 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     @comment.post_id = @post.id
-    @comment.save
-    redirect_to post_path(@post)
+    if @comment.save
+      redirect_to post_path(@post), notice: "New Comment Created!"
+    else
+      render 'post/show', status: :unprocessable_entity
+    end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to post_path(@post), status: :see_other
+    redirect_to post_path(@post), status: :see_other, notice: "Comment Destroyed!"
   end
 
   private

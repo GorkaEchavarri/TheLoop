@@ -1,0 +1,20 @@
+.banner-container {
+  background-color: #ffe7eb;
+  color: #4A0000;
+}
+
+.member-info {
+  background-color: rgba(255, 255, 255, 0);
+  border-color: #E22D06;
+  color: #E22D06;
+
+}
+
+.join-btn {
+  border-color: #4A0000;
+  background-color: #E22D06;
+  color: white;
+    &:hover {
+      background-color: #E22D06;
+    }
+}

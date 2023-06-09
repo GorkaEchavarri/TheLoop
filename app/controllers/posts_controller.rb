@@ -13,11 +13,10 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
 
     if @post.save
-      redirect_to post_path(@post), notice: "New Post Created!" #<<< take to post show path here
+      redirect_to post_path(@post), notice: "New Post Created!"
     else
       render 'new', status: :unprocessable_entity
     end
-
   end
 
   def show
@@ -42,6 +41,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    community_id = @post.community_id
+    community = Community.find(community_id)
+    @post.destroy
+    redirect_to community_path(community)
   end
 
   def is_flagged
@@ -56,6 +59,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content, :image)
+    params.require(:post).permit(:title, :content, :photo)
   end
 end
