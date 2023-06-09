@@ -3,7 +3,6 @@
 
   <%=render "shared/banner"%>
 
-
   <div class = "post-display mt-5">
     <div class = "poster-info-container d-flex">
 
@@ -69,6 +68,7 @@
 <br>
 
 <div class = "commentsgetrenderedhere mt-5">
+
   <h2>All comments</h2>
     <% @post.comments.each do |comment| %>
       <div class="card mb-1 w-75">

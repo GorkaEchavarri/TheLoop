@@ -53,6 +53,10 @@ class PostsController < ApplicationController
     redirect_to post_path(@post), notice: "Post Flagged!"
   end
 
+  def flags
+    @posts = Post.all
+  end
+
  private
   def find_post
     @post = Post.find(params[:id])
