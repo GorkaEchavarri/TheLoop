@@ -1,3 +1,4 @@
+<div class = "container">
 <div class = "posts-body-container" >
 
   <%=render "shared/banner"%>
@@ -63,20 +64,34 @@
   </div>
 </div>
 <br>
+<br>
+<br>
 
 <div class = "commentsgetrenderedhere mt-5">
-<h2>All comments</h2>
-  <% @post.comments.each do |comment| %>
-  <div class="card mb-3">
-    <div class="card-body">
-      <%= comment.user.username %>
-      <br>
-      <%= comment.content %>
-      <%= link_to "Delete",
-      post_comment_path(@post, comment),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if current_user.id == comment.user_id
-    %>
-    </div>
-  </div>
+
+  <h2>All comments</h2>
+    <% @post.comments.each do |comment| %>
+      <div class="card mb-1 w-75">
+        <div class="card-body">
+          <%= comment.user.username %>
+          <br>
+          <%= comment.content %>
+
+        </div>
+      </div>
+      <div class = "buttons-here w-25">
+        <%= link_to "Delete",
+            delete_comment_path(comment),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if current_user.id == comment.user_id
+          %>
+      </div>
 <% end %>
+</div>
+
+
+  <div>
+    <%= link_to community_path(@community), { class: "member-info btn my-5" } do %>
+      Back To <%=@community.title%>
+    <% end %>
+  </div>
 </div>
