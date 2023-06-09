@@ -1,13 +1,25 @@
 
 #fullpage {
   position: relative;
-  background-color: #FFC2CC;
+  background-color: #f0afba;
 }
 #firstsection {
   background-color: #ffffff;
   padding: auto;
   margin-bottom: 50px;
   margin-bottom: 50px;
+  a {
+    text-decoration: none !important;
+  }
+
+}
+
+#no-decoration {
+  text-decoration: none !important;
+}
+
+#no-dec {
+  text-decoration: none !important;
 }
 
 .menu-items {
@@ -96,17 +108,19 @@
   text-align: center;
 }
 
-#explanation-text {
-  color: #FFC2CC;
+#explanation-text-mine {
+  color: #0e0000;
   font-family: "Open Sans", sans-serif;
-  font-weight: 650;
+  font-weight: 590;
   font-size: 130px !important;
   padding-bottom: 20px;
-  padding-top: 100px !important;
+  padding-top: 75px !important;
+  text-decoration: none !important;
 }
 
+
 #explanation-text1 {
-  color: #FFC2CC;
+  color: #0e0000;
   font-family: "Open Sans", sans-serif;
   font-size: 30px !important;
   padding-bottom: 20px;

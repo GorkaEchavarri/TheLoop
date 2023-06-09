@@ -27,13 +27,13 @@
                   <h1 class="h1-large">Get in</h1>
                 </div>
                 <div>
-                  <a class="me-lg-3 mb-lg-0" href="/communities">
+                  <a class="me-lg-3 mb-lg-0" id="no-decoration" href="/mycommunities">
                 </div>
-                <%= link_to communities_path do %>
-                <div>
+                <%# <%= link_to user_session do %>
                   <%= image_tag 'loops.png', alt: "Main Loop Hero" %>
                 </div>
-                <% end %>
+                <%# <% end %>
+
               </div>
             </div>
             <div class="col-lg-12 col-xl-4">
@@ -50,8 +50,8 @@
         <div class="containerexplanation">
             <div class="row">
               <div>
-                  <h4 id="explanation-text">Community</h4>
-                  <%= image_tag('community.png', alt: 'community', size: '150x150') %>
+                  <h4 id="explanation-text-mine">Community</h4>
+                  <%= image_tag('community.png', alt: 'community', size: '80x80') %>
                 </div>
             </div>
         </div>
@@ -64,54 +64,54 @@
     <div id="landingcards" class="container">
       <div class="row">
           <div class="col-md-4 col-xl-3">
-              <div id="carded1" class="card bg-c-pink rounded">
+              <div id="carded1" class="custom-card card bg-c-pink rounded">
                   <div class="card-block">
-                      <h6 class="m-b-20">What can I eat when feeling nauseous?</h6>
-                      <p class="m-b-0">Hey, I just wanted to ask if anyone had any tips for cooking and eating when feeling off?</p>
+                      <h6 class="m-b-20" id="no-dec"><b>What can I eat when feeling nauseous?</b> </h6>
+                      <p>Hey, I just wanted to ask if anyone had any tips for cooking and eating when feeling off?</p>
                       <div class="f-left">
                     <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
                 </div>
-                <div class="f-right" style="margin-top: 10px;"><b>5</b> Upvotes</div>
+                <div class="f-right" style="margin-top: 10px;"><b>2 </b> Comments  <b> 5</b> Upvotes</div>
                   </div>
               </div>
           </div>
 
         <div class="col-md-4 col-xl-3">
-            <div id="carded2"class="card bg-c-pink order-card">
+            <div id="carded2"class="custom-card card bg-c-pink order-card">
                 <div class="card-block">
-                    <h6 class="m-b-20">What can I eat when feeling nauseous?</h6>
+                    <h6 class="m-b-20"><b>What can I eat when feeling nauseous?</b></h6>
                     <p class="m-b-0">Hey, I just wanted to ask if anyone had any tips for cooking and eating when feeling off?</p>
                     <div class="f-left">
                   <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
               </div>
-              <div class="f-right" style="margin-top: 10px;"><b>5</b> Upvotes</div>
+              <div class="f-right" style="margin-top: 10px;"><b>2 </b> Comments  <b> 5</b> Upvotes</div>
                 </div>
             </div>
         </div>
 
         <div class="col-md-4 col-xl-3">
-            <div id="carded3"class="card bg-c-pink order-card">
+            <div id="carded3"class="custom-card card bg-c-pink order-card">
                 <div class="card-block">
-                    <h6 class="m-b-20">What can I eat when feeling nauseous?</h6>
+                    <h6 class="m-b-20"><b>What can I eat when feeling nauseous?</b></h6>
                     <p class="m-b-0">Hey, I just wanted to ask if anyone had any tips for cooking and eating when feeling off?</p>
                     <div class="f-left">
                   <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
               </div>
-              <div class="f-right" style="margin-top: 10px;"><b>5</b> Upvotes</div>
+              <div class="f-right" style="margin-top: 10px;"><b>2 </b> Comments  <b> 5</b> Upvotes</div>
                 </div>
             </div>
         </div>
 
         <div class="col-md-4 col-xl-3">
-        <div id="carded4" class="card bg-c-pink order-card">
+        <div id="carded4" class="custom-card card bg-c-pink order-card">
           <div class="card-block">
-              <h6 class="m-b-20">What can I eat when feeling nauseous?</h6>
+              <h6 class="m-b-20"><b>What can I eat when feeling nauseous?</b></h6>
               <p class="m-b-0">Hey, I just wanted to ask if anyone had any tips for cooking and eating when feeling off?</p>
               <div class="f-left">
                   <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
               </div>
-              <div class="f-right" style="margin-top: 10px;"><b>5</b> Upvotes</div>
-            </div
+              <div class="f-right" style="margin-top: 10px;"><b>2 </b> Comments  <b> 5</b> Upvotes</div>
+            </div>
         </div>
       </div>
     </div>
@@ -177,7 +177,6 @@
     </div>
   </div>
 
-
   <%# #footer %>
   <div id="footer">
     <footer>
@@ -194,4 +193,5 @@
         </div>
       </footer>
     </div>
+  </div>
 </main>
