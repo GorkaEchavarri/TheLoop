@@ -38,7 +38,6 @@ class CommunitiesController < ApplicationController
 
   def mycommunities
     @communities = Community.all
-
   end
 
   private

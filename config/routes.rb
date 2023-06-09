@@ -24,6 +24,6 @@ Rails.application.routes.draw do
 
   delete "post/:id/delete", to: "comments#destroy", as: :delete_comment
 
-  get "mycommunities", to: "communities#mycommunities"
+  get "mycommunities", to: "communities#mycommunities", as: :my_communities
 
 end
