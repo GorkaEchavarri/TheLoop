@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     # end
   end
 
-  resources :users, only: %i[show edit update]
+  resources :users, only: %i[index show edit update]
+
 
   resources :posts, only: %i[show edit update destroy] do
     resources :comments, only: %i[index new create edit update destroy]

@@ -1,0 +1,10 @@
+#inner-card {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+#inner-card-btn {
+  position: absolute;
+  bottom: 8px;
+}
