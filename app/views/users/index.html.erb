@@ -1,10 +1,10 @@
-<div class="container">
-  <h1>Find Others</h1>
+<div class="container" >
+  <h1 id="user-title" style="text-align: center">Find Others</h1>
 
   <div class="flex-container justify-content-center" id="inner-card">
     <% @users.each do |user| %>
 
-    <div class="card align-items-center m-4 p-2 col-2 rounded-4">
+    <div class="card align-items-center m-4 p-2 col-2 rounded-4" id="user-card">
       <% if user.photo.key %>
         <%= cl_image_tag user.photo.key, height: 90, width: 90, crop: :fill, style: "border-radius: 50%;" if user.photo.key.present? %>
       <% else %>
