@@ -12,7 +12,13 @@
 @import "pages/index";
 @import "components/landingcards";
 
-
+// //body in all pages
 body {
   overflow-x: hidden;
+  background-color: #FFE7EB;
+}
+
+// Set titles color
+h1, h2, h3, h4, h5, h6 {
+  color: #E22D06;
 }
