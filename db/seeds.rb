@@ -83,14 +83,24 @@ user12.save!
 
 puts "creating communities"
 # create! 5 communities
-Community.create!(title: "Colon Cancer", description: "This is a community for people with colon cancer", user_id: 1)
-Community.create!(title: "Testicular Cancer", description: "This is a community for people with testicular cancer",user_id: 2)
-Community.create!(title: "Breast Cancer", description: "This is a community for people with breast cancer", user_id: 3)
-Community.create!(title: "Exercise", description: "This is a community for young people exercising with cancer", user_id:4)
-Community.create!(title: "More Exercise", description: "This is a community for young people exercising even more with cancer", user_id:5)
+comm1 = Community.create!(title: "Colon Cancer", description: "This is a community for people with colon cancer", user_id: 1)
+comm1.save!
+
+comm2 = Community.create!(title: "Testicular Cancer", description: "This is a community for people with testicular cancer",user_id: 2)
+comm2.save!
+
+comm3 = Community.create!(title: "Breast Cancer", description: "This is a community for people with breast cancer", user_id: 3)
+comm3.save!
+
+comm4 = Community.create!(title: "Exercise", description: "This is a community for young people exercising with cancer", user_id:4)
+comm4.save!
+
+comm5 = Community.create!(title: "More Exercise", description: "This is a community for young people exercising even more with cancer", user_id:5)
+comm5.save!
 
 #for demo
-Community.create!(title: "Gorka Support Group", description: "This is a community for people who love and suport Gorka", user_id: 10)
+comm6 = Community.create!(title: "Gorka Support Group", description: "This is a community for people who love and suport Gorka", user_id: 10)
+comm6.save!
 
 puts "creating posts"
 
