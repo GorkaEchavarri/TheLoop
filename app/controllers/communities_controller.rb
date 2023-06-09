@@ -37,6 +37,7 @@ class CommunitiesController < ApplicationController
   end
 
   def mycommunities
+    @communities = Community.all
   end
 
   private
