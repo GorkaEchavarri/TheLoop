@@ -1,58 +1,192 @@
 
 <%# #hero section %>
-<div class="container-fluid vh-100" style="background-color: #FFC2CC;">
+<%# <div class="container-fluid vh-100" style="background-color: #FFC2CC;"> %>
+<Main id="fullpage" data-controller='home'>
+  <div class="menuButton" data-action='click->home#toggleMenu'>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="menu-items" data-home-target='menu'>
+    <li>Community</li>
+    <li>Contact</li>
+    <li>Why</li>
+  </div>
+
   <div class="d-flex">
     <header>
-      <div>
-        <div class="container">
+        <div class="container" id="home-container">
           <div class="row">
             <div class="col-lg-12 col-xl-8">
               <div class="text-container">
                 <div class="col-sm-9 mb-8 p-12">
-                  <h4 class="herotoptext" id="herotext">A space for anyone impacted by cancer.<br>Speak to someone who's been in your shoes.</br></h4>
+                  <h4 class="herotoptext d-none" id="herotext">A place for anyone impacted by Cancer, whether you have been diagnosed or are supporting a loved one.</br></h4>
                 </div>
-                <div class="col-sm-9 mb-8 p-3">
+                <div class="col-sm-9 mb-8 p-12" id="getin">
                   <h1 class="h1-large">Get in</h1>
                 </div>
                 <div>
-                  <a class="me-lg-3 mb-4 mb-lg-0" href="***">
+                  <a class="me-lg-3 mb-lg-0" href="/communities">
                 </div>
+                <%= link_to communities_path do %>
                 <div>
-                  <img class="heroloop" src="***" alt="Main Loop hero" /></a>
+                  <%= image_tag 'loops.png', alt: "Main Loop Hero" %>
                 </div>
+                <% end %>
               </div>
             </div>
             <div class="col-lg-12 col-xl-4">
             </div>
           </div>
         </div>
-      </div>
     </header>
   </div>
 
-  <%# #sub hero section %>
-  <div class="explanation">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-6">
-                  <div class="text-container bg-gray">
-                      <h4>InTheLoop provides access to a community who are there to listen, share information and offer valuable advice.</h4>
+
+  <section id="firstsection">
+    <%# // explanation   %>
+    <div id="explanation">
+        <div class="containerexplanation">
+            <div class="row">
+              <div>
+                  <h4 id="explanation-text">Community</h4>
+                  <%= image_tag('community.png', alt: 'community', size: '150x150') %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div id="landingcards" class="container">
+      <div class="row">
+          <div class="col-md-4 col-xl-3">
+              <div id="carded1" class="card bg-c-pink rounded">
+                  <div class="card-block">
+                      <h6 class="m-b-20">What can I eat when feeling nauseous?</h6>
+                      <p class="m-b-0">Hey, I just wanted to ask if anyone had any tips for cooking and eating when feeling off?</p>
+                      <div class="f-left">
+                    <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+                </div>
+                <div class="f-right" style="margin-top: 10px;"><b>5</b> Upvotes</div>
                   </div>
               </div>
           </div>
+
+        <div class="col-md-4 col-xl-3">
+            <div id="carded2"class="card bg-c-pink order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">What can I eat when feeling nauseous?</h6>
+                    <p class="m-b-0">Hey, I just wanted to ask if anyone had any tips for cooking and eating when feeling off?</p>
+                    <div class="f-left">
+                  <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+              </div>
+              <div class="f-right" style="margin-top: 10px;"><b>5</b> Upvotes</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xl-3">
+            <div id="carded3"class="card bg-c-pink order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">What can I eat when feeling nauseous?</h6>
+                    <p class="m-b-0">Hey, I just wanted to ask if anyone had any tips for cooking and eating when feeling off?</p>
+                    <div class="f-left">
+                  <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+              </div>
+              <div class="f-right" style="margin-top: 10px;"><b>5</b> Upvotes</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xl-3">
+        <div id="carded4" class="card bg-c-pink order-card">
+          <div class="card-block">
+              <h6 class="m-b-20">What can I eat when feeling nauseous?</h6>
+              <p class="m-b-0">Hey, I just wanted to ask if anyone had any tips for cooking and eating when feeling off?</p>
+              <div class="f-left">
+                  <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+              </div>
+              <div class="f-right" style="margin-top: 10px;"><b>5</b> Upvotes</div>
+            </div
+        </div>
       </div>
+    </div>
+
+
+    <div id="Who">
+        <div class="who">
+            <div class="row">
+              <div>
+                  <h4 id="explanation-text1">The Loop provides access to a community who are there to listen, share information and offer valuable advice.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+
+  <div  id="values">
+  <div id="value">
+        <div>
+            <div class="row">
+                <div>
+                    <h4 id="value2">Why Join The Loop?</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="value">
+      <div>
+          <div class="row">
+              <div>
+                  <h4 id="value1">Talk to people in your shoes.</h4>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div id="value">
+      <div>
+          <div class="row">
+              <div>
+                  <h4 id="value1">Share what works.</h4>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div id="value">
+        <div>
+            <div class="row">
+                <div>
+                    <h4 id="value1">Help others.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="value">
+        <div>
+            <div class="row">
+                <div>
+                    <h4 id="value1">Get advice.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
   </div>
 
+
   <%# #footer %>
-  <div class="mt-auto fixed-bottom" style="position: absolute;width: 100%;">
-    <footer class="bg-pink text-center py-5">
-      <div class="container px-5">
-        <div class="text-white-50 small">
-          <div class="mb-2">&copy; The Loop 2023. All Rights Reserved.</div>
+  <div id="footer">
+    <footer>
+      <div class="footer-container">
+          <div class="mb-2">The Loop 2023. All Rights Reserved.</div>
               <a href="#!">Privacy</a>
-              <span class="mx-1">&middot;</span>
+              <span class="mx-1"></span>
                 <a href="#!">Terms</a>
-                <span class="mx-1">&middot;</span>
+                <span class="mx-1"></span>
                 <a href="#!">FAQ</a>
               </div>
             </div>
@@ -60,4 +194,4 @@
         </div>
       </footer>
     </div>
-</div>
+</main>
