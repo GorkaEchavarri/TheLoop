@@ -1,39 +1,48 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "../mycommunities", class: "navbar-brand" do %>
-      <%= image_tag "loopsingle", style: "width: 60px; height: 25px;" %>
+      <%= image_tag "loopsingle", style: "width: 70px; height: 30px;" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-<div class="notification">
-  <span class="notification-icon"></span>
-</div>
+    <form action="/search" method="GET" id="search">
+      <div class="search-container">
+      <label for="query">
+        <div class="search-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </label>
 
-  <div class="dropdown">
-  <button class="dropdown-btn">Notifications
-    <span class="notification"></span>
-  </button>
-  <div class="dropdown-content">
-    <a href="#">Notification 1</a>
-    <a href="#">Notification 2</a>
-  </div>
-</div>
+        <input class="search-input" type="text" name="query" placeholder="Search..." onkeydown="if (event.keyCode === 13) this.form.submit()"/>
 
+        <%# <p class="search-placeholder">Search...</p> %>
 
-  <form action="/search" method="GET" id="search">
-    <input type="text" name="query" placeholder="Search..." onkeydown="if (event.keyCode === 13) this.form.submit()" />
-  </form>
+      </div>
+    </form>
 
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
+
+        <%# <div class="notification">
+          <span class="notification-icon"></span>
+        </div> %>
+
+        <div class="dropdown">
+          <button class="dropdown-btn"><i class="fa-regular fa-bell"></i>
+            <%# <span class="notification"></span> %>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Notification 1</a>
+            <a href="#">Notification 2</a>
+          </div>
+        </div>
+
+
           <li class="nav-item">
             <%= link_to "Users", "../users", class: "nav-link" %>
           </li>
@@ -44,7 +53,7 @@
 
           <li >
           <% if current_user.photo.key%>
-            <%= cl_image_tag current_user.photo.key, height: 45, width: 45, crop: :fill, style: "border-radius: 50%;"%>
+            <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :fill, style: "border-radius: 50%; margin-left: 8px"%>
             <% else %>
             <img src="https://res.cloudinary.com/dgqqot40q/image/upload/v1686230942/TheLoop/placeholder_hfuoup.png" alt="A placeholder profile picture" height="45" width="45">
             <% end %>
