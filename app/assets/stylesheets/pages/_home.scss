@@ -1,7 +1,13 @@
-
+.realign  {
+  margin-top: -5rem;
+  margin-left: -5rem;
+}
 #fullpage {
   position: relative;
   background-color: #f0afba;
+  margin-top: -5.2rem;
+  margin-left: -6.8rem;
+  max-width: fit-content;
 }
 #firstsection {
   background-color: #ffffff;
@@ -36,10 +42,11 @@
     font-size: 90px;
     font-weight: 500;
     font-style: italic;
-    margin-bottom: 5px; /* Adjust the value as needed */
+    margin-bottom: 5px;
     font-family: "Open Sans", sans-serif;
     color: #FF000A;
     margin-bottom: -30px;
+    padding-left: 57px;
   }
 
 }
@@ -47,7 +54,7 @@
 .menuButton {
   margin-top: 10px;
   position: absolute;
-  right: 40px;
+  right: 90px;
   top: 20px;
   display: flex;
   flex-direction: column;
