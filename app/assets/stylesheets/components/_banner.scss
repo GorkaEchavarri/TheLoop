@@ -1,8 +1,15 @@
 .banner-container {
-  background-color: $backgroundpink;
   color: #4A0000;
   margin-top: -5rem;
-  margin-left: -5.6rem;
+  margin-left: -6rem;
+  margin-right: 0;
+  width: 100vw;
+  padding-left: 5.6rem;
+  padding-right: 5.6rem;
+  padding-bottom: 50px;
+  padding-top: 30px;
+  border-bottom: 0.1px solid $lightpink;
+  box-shadow: 0px 2px 2px rgb(220, 220, 220);
 }
 
 .member-info {
@@ -19,4 +26,8 @@
     &:hover {
       background-color: #E22D06;
     }
+}
+
+#grouptitle {
+  color: $bloodred;
 }

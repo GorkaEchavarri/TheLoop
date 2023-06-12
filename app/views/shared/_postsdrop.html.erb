@@ -1,0 +1,22 @@
+<div class="dropdown">
+  <input type="checkbox" id="dropdown">
+
+  <label class="dropdown__face" for="dropdown" style="padding: 18px; margin-left: 35px; margin-top: 12px">
+    <div class="dropdown__text"> </div>
+
+    <div class="dropdown__arrow"></div>
+  </label>
+
+  <ul class="dropdown__items">
+    <li id="dropdown__list">Flag</li>
+    <li id="dropdown__list">Delete</li>
+  </ul>
+</div>
+
+<svg>
+  <filter id="goo">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+    <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+    <feBlend in="SourceGraphic" in2="goo" />
+  </filter>
+</svg>
