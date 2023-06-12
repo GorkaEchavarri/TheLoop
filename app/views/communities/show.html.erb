@@ -1,34 +1,11 @@
-
-  <%# <div class="card mb-4">
-      <div class="card-body">
-        <h1><%= @community.title </h1>%>
-        <%# <p><%= @community.description </p>%>
-
-
-        <%# <%= link_to "Edit",
-          edit_community_path(@community)
-        %>
-        <%# <%= link_to "Delete",
-          community_path(@community),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-        %>
-        <%# <br>
-        <%= link_to "All communities",
-          communities_path
-        %>
-
-
-      <%# </div> %>
-  <%# </div> %>
-
-  <%= render "shared/banner"%>
+<%= render "shared/banner"%>
 
   <div class = "new form mx-5">
     <%= render "posts/new"%>
   </div>
 
 
-<div class="containerish mx-5">
+<div class="containerish mx-5 my-5">
 
   <% @posts.each do |post| %>
     <% if post.community_id == @community.id %>
