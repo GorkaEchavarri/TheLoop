@@ -1,6 +1,5 @@
 <br>
 
-
 <div class="container justify-content-center mx-12 p-2 border rounded" style="width:900px" id="user-card">
 <h1 class="m-3">Profile page of <%= @user.username %></h1>
 <div class="container d-flex">
@@ -21,27 +20,28 @@
 
     <div class="container d-flex flex-column col-4 row text-center">
       <% if @user.photo.key%>
-        <%= cl_image_tag @user.photo.key, height: 200, width: 200, crop: :fill, style: "border-radius: 50%;"%>
+        <%= cl_image_tag @user.photo.key, height: 200, width: 200, crop: :fill, style: "border-radius: 50%;height: 200px;width: 220px;margin: auto;"%>
       <% else %>
         <img src="https://res.cloudinary.com/dgqqot40q/image/upload/v1686230942/TheLoop/placeholder_hfuoup.png" alt="A placeholder profile picture" height="200" width="200">
       <% end  %>
+      <strong class="m-2">
       <%= @user.first_name %>
       <%= @user.last_name %>
-      <br>
+      </strong>
       <%= @user.date_of_birth %>
       <%= @user.region %>
       <br>
       <%= @user.user_type.capitalize() %>
       <br>
       <%= @user.status %>
-      <button type="button" class="btn btn-outline-primary m-1 mx-auto">Add as a friend</button>
-      <button type="button" class="btn btn-outline-primary mx-auto">Direct message</button>
+      <button type="button" class="btn btn-outline-danger m-1 mx-auto">Add as a friend</button>
+      <button type="button" class="btn btn-outline-danger mx-auto">Direct message</button>
   </div>
 
 
 </div>
 </div>
 <br>
-  <%= link_to users_path, { class: "btn btn-outline-dark mx-4 mt-5" } do %>
+  <%= link_to users_path, { class: "btn btn-outline-danger mx-4 mt-5" } do %>
       All users
   <% end %>

@@ -1,12 +1,48 @@
-<%=render "shared/banner"%>
-<div class = "posts-body-container mx-5" >
+<%= render "shared/banner"%>
+<div class="postz mx-5">
+  <div class="d-flex">
+    <div class="post-avatar-title">
+      <div class="avatar">
+        <% if @user.photo.key.present? %>
+          <%= cl_image_tag @user.photo.key, height: 100, width: 100, crop: :fill, style: "border-radius: 50% ; border: 2px solid #80c5bd;" %>
+        <% else %>
+          <%# default avatar %>
+        <% end %>
+      </div>
+      <div class="d-flex flex-column">
+        <div class="post-user-name"><p id="userz"><%= @user.username %></p></div>
+
+      </div>
+    </div>
+
+    <div class="post-pills">Status</div>
+    <div class="post-pills">pills</div>
+    <%= render "shared/postsdrop" %>
+  </div>
 
 
+  <div class="post-content">
+  <div class="post-title"><h4><%=@post.title %>Hello hello testing testingHello hello testing testing</h4></div>
+    <%= @post.content %>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quidem exercitationem, sequi, molestias architecto fugit odio, cumque quam laboriosam fugiat alias eaque! Neque libero vero fugit asperiores dolores expedita doloribus optio esse maiores, nemo sequi modi harum ipsum ullam repellat corporis a possimus, porro, quisquam cum assumenda at. Nobis, necessitatibus!
+  </div>
 
-  <div class = "post-display mt-5">
-    <div class = "poster-info-container d-flex">
+  <div class="d-flex">
+    <div class="post-social-ctas">
+      <div id="arrow"><i class="fa-solid fa-circle-arrow-up" style="color: #e22e06;"></i></div>
+      <div class="post-votes"><%= @upvotes_count %> Upvotes</div>
+      <div id="commentz"><i class="fa-regular fa-comment" style="color: #e22e06;"></i></div>
+      <div class="post-comments"><%= @comments_count %> Comments</div>
+    </div>
+  </div>
+</div>
+<%
+=begin %>
 
-      <div class = "avatar w-25">
+  <div class="post-display mt-5">
+    <div class="poster-info-container d-flex">
+
+      <div class="avatar w-25">
         <%= cl_image_tag @user.photo.key, height: 100, width: 100, crop: :fill, style: "border-radius: 50% ; border: 2px solid #80c5bd;" if @user.photo.key.present? %>
       </div>
 
@@ -67,6 +103,8 @@
 <div class = "container">
 <div class = "commentsgetrenderedhere mt-5">
 
+
+
   <h2>All comments</h2>
     <% @post.comments.each do |comment| %>
       <div class="card mb-1">
@@ -86,9 +124,16 @@
 <% end %>
 </div>
 
+
+
 </div>
+
+
 <div>
     <%= link_to community_path(@community), { class: "member-info btn my-5" } do %>
       Back To <%=@community.title%>
     <% end %>
 </div>
+
+<%
+=end%>
