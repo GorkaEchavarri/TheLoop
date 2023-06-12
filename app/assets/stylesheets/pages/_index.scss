@@ -5,6 +5,7 @@
 body {
   background-color: $barelythere;
   margin-top: 0px;
+  max-width: fit-content;
 }
 
 h1 {
@@ -35,7 +36,7 @@ ul {
 .bigcontainer {
   margin-top: 5rem;
   margin-left: 5rem;
-  max-width: none;
+  width: 100%;
 }
 
 .communitiescard {
