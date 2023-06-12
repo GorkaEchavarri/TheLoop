@@ -1,24 +1,24 @@
+// External libraries
+@import "bootstrap";
+@import "font-awesome";
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
 
-// External libraries
-@import "bootstrap";
-@import "font-awesome";
 
 // Your CSS partials
-@import "components/index";
-@import "pages/index";
 @import "components/landingcards";
+@import "pages/index";
+@import "components/index";
 
 // //body in all pages
 body {
   overflow-x: hidden;
-  background-color: #FFE7EB;
 }
 
 // Set titles color
 h1, h2, h3, h4, h5, h6 {
-  color: #E22D06;
+  color: $bloodred;
 }

@@ -1,3 +1,64 @@
 // Import page-specific CSS files here.
 @import "home";
-@import "components/landingcards";
+@import "config/colors";
+
+body {
+  background-color: $barelythere;
+  margin-top: 0px;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  color: $royalblood;
+}
+
+a {
+  color: $bloodred;
+  text-decoration: none;
+
+  &:hover {
+    color: $heartred;
+  }
+}
+
+ul {
+  text-decoration: none;
+}
+
+.container {
+  margin-top: 5rem;
+  margin-left: 5rem;
+  max-width: none;
+}
+
+.communitiescard {
+  border-radius: 25px;
+
+  h4 {
+    font-size: 1.5rem;
+  }
+  p {
+    color: $darkerred;
+    font-size: 1.05rem;
+  }
+
+  .card-body {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &:hover {
+  background-color: #ffedf0;
+  transition-duration: 0.5s;
+  border: solid $backgroundpink;
+  border-width: 1px;
+  box-shadow: $flamingopink 0px 0px 3px 1px;
+  }
+}
