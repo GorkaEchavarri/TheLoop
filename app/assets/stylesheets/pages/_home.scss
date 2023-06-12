@@ -3,7 +3,7 @@
 .containerexplanation {
   margin-top: 5rem;
   margin-bottom: 5rem;
-  
+}
 .realign  {
   margin-top: -5rem;
   margin-left: -5rem;
@@ -72,7 +72,6 @@
     margin-bottom: -30px;
     padding-left: 57px;
   }
-
 }
 
 
@@ -90,7 +89,7 @@
   width: fit-content;
   row-gap: 8px;
   padding: 5px;
-
+}
 
 #fullpage {
   position: relative;
@@ -108,7 +107,7 @@
 
 #home-container {
   margin-bottom: 5rem;
-    img {
+  img {
     max-width: 100%;
   }
 }
@@ -131,11 +130,11 @@
     margin-bottom: 20px !important;
   }
   .h1-large {
-  color: $heartred;
-  font-family: "Open Sans", sans-serif;
-  font-style: italic;
-  font-size: 90px !important;
-  margin-top: 10px;
+    color: $heartred;
+    font-family: "Open Sans", sans-serif;
+    font-style: italic;
+    font-size: 90px !important;
+    margin-top: 10px;
   }
 }
 
@@ -166,7 +165,6 @@
   margin-top: 300px;
   text-align: center !important;
   width: 100% !important;
-
 }
 
 #who {
