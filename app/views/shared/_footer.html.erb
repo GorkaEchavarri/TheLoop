@@ -1,16 +1,28 @@
+<% if user_signed_in? %>
+
 <div id="footer">
+  <footer>
+    <div class="footer-container">
+      <div>
+        <%= link_to 'Find Others', users_path %>
+        <span class="separator" style="color: red">|</span>
+        <%= link_to 'Communities', communities_path %>
+        <span class="separator" style="color: red">|</span>
+        <%= link_to 'Profile', user_path(current_user.id) %>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<% else %>
+  <div id="footer">
     <footer>
       <div class="footer-container">
-          <div class="mb-2">The Loop 2023. All Rights Reserved.</div>
-              <a href="#!">Privacy</a>
-              <span class="mx-1"></span>
-                <a href="#!">Terms</a>
-                <span class="mx-1"></span>
-                <a href="#!">FAQ</a>
-              </div>
-            </div>
-          </div>
+        <div class="centered-text">
+          <p id="copyright" style="font-size: 12px !important"; >The Loop, 2023. All Rights Reserved</p>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   </div>
+<% end %>

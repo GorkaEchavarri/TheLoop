@@ -33,10 +33,12 @@ ul {
   text-decoration: none;
 }
 
+
 .bigcontainer {
   margin-top: 5rem;
   margin-left: 5rem;
 }
+
 
 .communitiescard {
   border-radius: 25px;
@@ -61,4 +63,11 @@ ul {
   border-width: 1px;
   box-shadow: $flamingopink 0px 0px 3px 1px;
   }
+}
+
+#bigcontainer {
+  margin-right: 5rem;
+  margin-left: 5rem;
+  margin-bottom: 5rem;
+  margin-top: 2rem;
 }
