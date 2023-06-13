@@ -56,3 +56,13 @@
   display: flex;
   padding: 50px;
 }
+
+#chatroom-btn input[type="submit"] {
+  color: #dc3545;
+  border: none;
+  padding: 0px;
+}
+
+#chatroom-btn input[type="submit"]:hover {
+  color: #ffffff;
+}
