@@ -1,0 +1,13 @@
+<div class="">
+<h2>Chatrooms</h2>
+
+<% unless @chatrooms.nil? %>
+
+<% @chatrooms.each do |chatroom| %>
+
+  <% if chatroom.asker_id = current_user.id %>
+    <p><%= link_to "Chat with: #{User.find(chatroom.receiver_id).username}", chatroom_path(chatroom) %></p>
+  <% end %>
+<% end %>
+</div>
+<% end %>

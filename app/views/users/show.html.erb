@@ -35,13 +35,19 @@
       <br>
       <%= @user.status %>
       <button type="button" class="btn btn-outline-danger m-1 mx-auto">Add as a friend</button>
-      <button type="button" class="btn btn-outline-danger mx-auto">Direct message</button>
+      <%# <button type="button" class="btn btn-outline-danger mx-auto">Direct message</button> %>
+      <%= link_to "Direct message", new_chatroom_path(), class: "btn btn-outline-danger m-1 mx-auto" %>
   </div>
+
 
 
 </div>
 </div>
 <br>
+        <%# <p>Create chat</p> %>
+        <%= render '/chatrooms/new', chatroom: @chatroom, user: @user %>
+
+
   <%= link_to users_path, { class: "btn btn-outline-danger mx-4 mt-5" } do %>
       All users
   <% end %>

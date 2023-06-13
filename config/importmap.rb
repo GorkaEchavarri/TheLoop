@@ -7,3 +7,6 @@ pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 pin "@popperjs/core", to: "popper.js", preload: true
 pin "bootstrap", to: "bootstrap.min.js", preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
+pin "@rails/actioncable", to: "https://cdn.jsdelivr.net/npm/@rails/actioncable@7.0.5/app/assets/javascripts/actioncable.esm.js"
+pin "@rails/actioncable", to: "actioncable.esm.js"
+pin_all_from "app/javascript/channels", under: "channels"
