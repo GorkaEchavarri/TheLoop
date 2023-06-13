@@ -3,7 +3,7 @@ import { createConsumer } from "@rails/actioncable"
 
 // Connects to data-controller="chatroom-subscription"
 export default class extends Controller {
-  static values = { chatroomId: Number }
+  static values = { chatroomId: Number, CurrentUserId: Number }
   static targets = [ "messages" ]
 
   connect() {
@@ -17,6 +17,9 @@ export default class extends Controller {
   #insertMessageAndScrollDown(data) {
     this.messagesTarget.insertAdjacentHTML("beforeend", data)
     this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+    // Logic to know if sender is the current user
+    const currentUserIsSender = this.CurrentUserIdValue === data.sender_id
+    console.log(this.CurrentUserIdValue)
   }
 
   resetForm(event) {

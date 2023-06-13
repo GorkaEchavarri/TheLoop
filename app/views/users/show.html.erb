@@ -40,9 +40,13 @@
   </div>
 
 
+
 </div>
 </div>
 <br>
+        <%# <p>Create chat</p> %>
+        <%= render '/chatrooms/new', chatroom: @chatroom, user: @user %>
+
 
   <%= link_to users_path, { class: "btn btn-outline-danger mx-4 mt-5" } do %>
       All users

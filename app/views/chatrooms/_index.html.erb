@@ -1,0 +1,8 @@
+<div class="">
+<h2>Chatrooms</h2>
+<% unless @chatrooms.nil? %>
+<% @chatrooms.each do |chatroom| %>
+<p><%= link_to "Chat with: #{chatroom.name}", chatroom_path(chatroom) %></p>
+<% end %>
+</div>
+<% end %>
