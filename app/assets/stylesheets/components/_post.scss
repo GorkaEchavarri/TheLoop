@@ -1,0 +1,94 @@
+
+
+.postz {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-style: solid;
+  border-color: $flamingopink;
+  border-width: 0.1px;
+  border-radius: 22px;
+  padding: 20px;
+  // position: relative;
+  box-shadow: 0px 2px 5px rgb(220, 220, 220);
+  padding-top: 20px;
+  margin-top: 40px;
+
+
+  .post-avatar-title {
+    display: flex;
+  }
+  .post-pills {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-top: 14px;
+    border-style: solid;
+    border-color: $bloodred;
+    border-width: 1px;
+    border-radius: 10px;
+    margin-bottom: 13px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: $bloodred;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .post-pills:hover {
+    color: $royalblood;
+  }
+
+
+  .post-social-ctas {
+    display: flex;
+    margin-left: auto;
+  }
+}
+
+#userz {
+  color: $royalblood;
+  padding-top: 15px;
+  transition: color 0.2s ease-in-out;
+}
+
+#userz:hover {
+  color: $bloodred;
+}
+
+
+.post-title h4 {
+
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+
+
+.post-votes,
+.post-comments {
+  padding-right: 25px;
+  color: $royalblood;
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.post-votes:hover,
+.post-comments:hover {
+  color: $bloodred;
+}
+
+.bigcontainer {
+  margin-top: 5rem;
+  margin-left: 6rem;
+  margin-right: 6rem;
+  max-width: none;
+}
+
+#arrow {
+
+  padding-right: 5px;
+}
+#commentz {
+
+  padding-right: 5px;
+}

@@ -1,22 +1,19 @@
-<div class = "banner-container d-flex" >
-      <%# <needs imagesource directed to community.image>  %>
-  <div class = "community-details-container w-75 text-start">
-    <div class = "community_title h-50">
-      <h1><%=@community.title %></h1>
+<div class="banner-container d-flex" style ="width: 75rem; height: 20rem;">
+  <%# <needs imagesource directed to community.image>  %>
+  <div class="community-details-container w-75 text-start">
+    <div class="community_title h-50">
+      <h1 id="grouptitle"><%= @community.title %></h1>
     </div>
-    <div class = "community_description h-50">
-      <h3><%=@community.description%></h3>
+    <div class="community_description h-50">
+      <h3><%= @community.description%></h3>
     </div>
   </div>
-  <div class = "button-container w-25 d-flex align-items-center justify-content-evenly flex-column">
+  <div class="button-container w-25 d-flex align-items-center justify-content-evenly flex-column">
     <%= link_to root_path, { class: "join-btn btn btn-sm" } do %>
       Join this Loop
-  <% end %>
+    <% end %>
     <%= link_to root_path, { class: "member-info btn btn-sm" } do %>
       3 Members
-  <% end %>
+    <% end %>
   </div>
-
-
-
 </div>
