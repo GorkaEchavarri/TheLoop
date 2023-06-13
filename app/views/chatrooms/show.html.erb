@@ -1,11 +1,12 @@
 <div class="chatroom-container">
-  <div class="flex-item col-10">
+  <div class="flex-item col-9">
     <div class="chatroom"
       data-controller="chatroom-subscription"
       data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
       >
-      <h1>#<%= @friend.username %></h1>
-      <h1><%= current_user.id %></h1>
+      <h1>
+        <%= cl_image_tag @friend.photo.key, height: 50, width: 50, crop: :fill, style: "border-radius: 50%;" if @friend.photo.key.present? %>
+      <%= @friend.username %></h1>
       <div class="messages"
         data-chatroom-subscription-target="messages"
         >
@@ -26,7 +27,7 @@
     </div>
   </div>
 
-  <div class="flex-item col-2">
+  <div class="flex-item col-3 m-4 p-2">
     <%= render 'index' %>
     <%= yield :index %>
   </div>
