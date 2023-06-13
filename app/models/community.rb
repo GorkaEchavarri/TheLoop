@@ -9,4 +9,8 @@ class Community < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_one_attached :photo
+
+  include PgSearch::Model
+
+  multisearchable against: :title
 end

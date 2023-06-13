@@ -1,0 +1,29 @@
+<%# <div class="search-container"> %>
+
+  <% @posts.each do |post|%>
+  <% @results.each do |result| %>
+<%#
+      <%= cl_image_tag post.first.photo.key, height: 50, width: 50, crop: :fill, style: "border-radius: 15px" if post.first.photo.key.present?%>
+     <%if result.searchable_type == "post" %>
+
+      <div class= "card my-3 p-3 text-bg-light d-flex flex-row">
+        <%= result.content %>
+      </div>
+
+      <div class="community-container">
+      <%elsif result.searchable_type == "community" %>
+
+        <div class= "card my-3 p-3 text-bg-light d-flex flex-row">
+          <%= result.content %>
+        </div>
+        </div>
+      <%else%>
+
+      <div class= "card my-3 p-3 text-bg-light d-flex flex-row">
+        <%= result.content %>
+      </div>
+
+      <% end %>
+  <% end %>
+<% end %>
+<%# </div> %>

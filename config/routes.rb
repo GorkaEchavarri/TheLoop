@@ -7,10 +7,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :communities do
     resources :posts, only: %i[new create]
-    # do
-    #  resources :comments, only: %i[index new create edit update destroy]
-    # end
   end
+
+  resources :searches, only: %i[index]
 
   resources :users, only: %i[index show edit update]
 
