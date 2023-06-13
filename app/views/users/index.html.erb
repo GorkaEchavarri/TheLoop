@@ -3,22 +3,22 @@
 
   <div class="flex-container justify-content-center" id="inner-card">
     <% @users.each do |user| %>
+      <%= link_to user_path(user), class: "m-4 col-2" do %>
+        <div class="align-items-center p-2 card rounded-4.5 h-100" id="user-card">
+          <% if user.photo.key %>
+            <%= cl_image_tag user.photo.key, height: 50, width: 50, crop: :fill, style: "border-radius: 50%;" if user.photo.key.present? %>
+          <% else %>
+            <img src="https://res.cloudinary.com/dgqqot40q/image/upload/v1686230942/TheLoop/placeholder_hfuoup.png" alt="A placeholder profile picture" height="60" width="60">
+          <% end %>
+          <strong><p id="card-name" style="color: #E22D06;margin: 10px;"><%= user.username%></p></strong>
+          <p style="color: #E22D06"><%= user.first_name%> | <%= user.age %> | <span id="card-user"><%= User::TYPES[user.user_type] %></span></p>
 
-    <div class="card align-items-center m-4 p-2 col-2 rounded-4" id="user-card">
-      <% if user.photo.key %>
-        <%= cl_image_tag user.photo.key, height: 90, width: 90, crop: :fill, style: "border-radius: 50%;" if user.photo.key.present? %>
-      <% else %>
-        <img src="https://res.cloudinary.com/dgqqot40q/image/upload/v1686230942/TheLoop/placeholder_hfuoup.png" alt="A placeholder profile picture" height="90" width="90">
+          <% if user.status %>
+            <p id="card-status"><%= user.status %></p>
+          <% else %>
+            <p id="card-status-empty"> </p>
+          <% end %>
+        </div>
       <% end %>
-      <strong><p style="color: #E22D06;margin: 10px;"><%= user.first_name%></p> </strong>
-      <p><%= user.user_type %></p>
-      <% if user.status %>
-      <p><%= user.status %></p>
-        <% else %>
-          <br>
-      <% end %>
-      <div id="btn-user"><%= link_to "View", user_path(user)%></div>
-    </div>
-
     <% end %>
   </div>
