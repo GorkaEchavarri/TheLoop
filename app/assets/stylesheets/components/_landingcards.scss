@@ -1,8 +1,7 @@
-.realign {
-  margin-top: -5rem;
-  margin-left: -5rem;
-  background:#FFE7EB;
-}
+// .realign {
+//   margin-top: -5rem;
+//   margin-left: -5rem;
+// }
 
 // .order-card {
 //   color: #fff;
@@ -30,8 +29,8 @@
 
 
 #carded {
-  width: 28rem;
-  height: 12rem;
+  width: 25rem;
+  height: 11rem;
   margin-bottom: 30px;
   border-radius: 30px !important;
   background-color: #fedae0;
@@ -39,6 +38,7 @@
   border-width: 0px;
   border-style: none !important;
   color: $royalblood;
+
 }
 
 // #carded2 {
@@ -67,7 +67,10 @@
 }
 
 .custom-card  .card-block {
-  padding: 25px;
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
 }
 
 .order-card i {
