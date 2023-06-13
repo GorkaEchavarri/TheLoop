@@ -23,7 +23,7 @@
  <body>
     <%= render 'shared/navbar' unless params[:controller] == "pages" && params[:action] == "home"%>
 
-    <div class = "bigcontainer">
+    <div id = "bigcontainer">
     <%= yield %>
     </div>
 

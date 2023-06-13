@@ -11,9 +11,7 @@
 #fullpage {
   position: relative;
   background-color: #f0afba;
-  margin-top: -5.2rem;
-  margin-left: -6.8rem;
-  max-width: fit-content;
+  max-width: 100%;
 
 }
 
@@ -25,10 +23,6 @@
   flex-direction: row;
   justify-content: space-evenly;
   width: 80%;
-}
-
-.hero {
-  padding-bottom: 8rem;
 }
 
 .menuButton {
