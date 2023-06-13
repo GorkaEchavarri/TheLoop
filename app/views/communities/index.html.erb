@@ -1,7 +1,8 @@
 <h1>All Loops</h1>
-<div class="row my-5 d-flex justify-content-start align-content-stretch ">
+
+<div class="communitygrid">
   <% @communities.each do |community| %>
-    <div class="communitiescard card m-3" style="width: 20rem; height: 10rem;">
+    <div class="communitiescard card m-3" style="width: 18rem; height: 9rem;">
       <div class="card-body">
         <%= link_to community_path(community.id) do %>
           <h4 class="card-title"><%=community.title%></h4>

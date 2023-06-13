@@ -1,16 +1,16 @@
 .containerexplanation {
-  margin-top: 5rem;
+  margin-top: 3.5rem;
   margin-bottom: 5rem;
 }
 
 .explanationcards {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
-  width: 80%;
+  width: 75%;
 }
 
 .menuButton {
@@ -41,10 +41,9 @@
     opacity: 1;
   }
   li {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 500;
     font-style: italic;
-    margin-bottom: 5px;
     font-family: "Open Sans", sans-serif;
     color: $heartred;
     margin-bottom: -30px;
@@ -56,8 +55,10 @@
   margin-left: 5rem;
 }
 .realign  {
-  margin-top: -5rem;
+  margin-top: -2rem;
   margin-left: -5rem;
+  margin-right: -5rem;
+  background:#FFE7EB;
 }
 
 
@@ -72,7 +73,7 @@
   color: $communitypink;
   font-family: "Open Sans", sans-serif;
   font-weight: 590;
-  font-size: 130px !important;
+  font-size: 5rem;
   text-decoration: none !important;
 }
 
@@ -80,7 +81,7 @@
 #explanation-text1 {
   color: $communitypink;
   font-family: "Open Sans", sans-serif;
-  font-size: 30px !important;
+  font-size: 1.5rem;
   padding-bottom: 20px;
   padding-top: -10px;
   text-align: center;
@@ -110,19 +111,20 @@
 
 #herotext {
   color: $barelythere;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-family: "Open Sans", sans-serif;
-  margin-top: 2rem;
-  margin-left: 2rem;
+  margin-top: -2.5rem;
+  margin-left: 5rem;
   font-style: italic;
   line-height: 1.5;
+  margin-bottom: 6rem;
 }
 
 #home-container {
   margin-bottom: 5rem;
   margin-left: -3rem;
   img {
-    max-width: 90%;
+    max-width: 100%;
   }
 }
 
