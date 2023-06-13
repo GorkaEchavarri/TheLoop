@@ -1,0 +1,24 @@
+
+  <div id="search-container-render">
+    <%= simple_form_for searches_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], placeholder: 'Search...', {class: 'search-input'}"%>
+      <p id="search-input"></p>
+      <%= submit_tag 'Search' %>
+    <% end %>
+  </div>
+
+
+<%# <label for="query">
+  <div class="search-icon">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </div>
+  </label>
+
+  <input class="search-input" type="text" name="query" placeholder="Search..." onkeydown="if (event.keyCode === 13) this.form.submit()"/>
+
+  <%# <p class="search-placeholder">Search...</p> %>
+
+<%# </div> %>
+<%# <% @results.each do |result| %>
+<%# <%=   result.content%>
+<%# <% end %>

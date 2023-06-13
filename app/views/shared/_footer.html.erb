@@ -8,7 +8,7 @@
         <span class="separator" style="color: red">|</span>
         <%= link_to 'Communities', communities_path %>
         <span class="separator" style="color: red">|</span>
-        <%# <%= link_to 'Profile', edit_user_path %> %>
+        <%= link_to 'Profile', user_path(current_user.id) %>
       </div>
     </div>
   </footer>
