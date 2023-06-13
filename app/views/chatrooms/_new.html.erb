@@ -1,6 +1,6 @@
-<p>Create chat</p>
-<%= form_with(model: chatroom, remote: true, class: "d-flex" ) do |f| %>
+
+<%= form_with(model: chatroom, remote: true, class: "btn btn-outline-danger mx-auto", html: { id: "chatroom-btn"}) do |f| %>
   <%= f.hidden_field :receiver_id, { value: user.id } %>
-  <%= f.text_field :name, class: "form-control", autocomplete: 'off' %>
-  <%= f.submit data: { disable_with: false } %>
+  <%# <%= f.text_field :name, class: "form-control", autocomplete: 'off' %>
+  <%= f.submit data: { disable_with: false }, class: "btn btn-outline-danger mx-auto"%>
 <% end %>
