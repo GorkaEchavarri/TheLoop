@@ -43,8 +43,14 @@
         </div>
 
 
+
+
           <li class="nav-item">
-            <%= link_to "Users", "../users", class: "nav-link" %>
+         <a href="../users" class="nav-link">
+        <i class="fa-solid fa-user-group" style="color: #e22e06;"></i>
+        Find
+        </a>
+
           </li>
 
           <li class="nav-item">
@@ -53,9 +59,9 @@
 
           <li >
           <% if current_user.photo.key%>
-            <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :fill, style: "border-radius: 50%; margin-left: 8px"%>
+            <%= cl_image_tag current_user.photo.key, height: 30, width: 30, crop: :fill, style: "border-radius: 50%; margin-left: 6px"%>
             <% else %>
-            <img src="https://res.cloudinary.com/dgqqot40q/image/upload/v1686230942/TheLoop/placeholder_hfuoup.png" alt="A placeholder profile picture" height="45" width="45">
+            <img src="https://res.cloudinary.com/dgqqot40q/image/upload/v1686230942/TheLoop/placeholder_hfuoup.png" alt="A placeholder profile picture" height="35" width="35">
             <% end %>
           </li>
 
