@@ -5,4 +5,8 @@ class Post < ApplicationRecord
   validates :content, length: { maximum: 2000 }
   has_many :comments, dependent: :destroy
   has_one_attached :photo
+
+  include PgSearch::Model
+
+  multisearchable against: [:title, :content]
 end
