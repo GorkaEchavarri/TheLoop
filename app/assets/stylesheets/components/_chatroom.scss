@@ -28,3 +28,30 @@
     }
   }
 }
+
+.message-box {
+  width: fit-content;
+  max-width: 40%;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #FFE7EB;
+  padding: 10px;
+  text-align: right;
+  margin-right: 0px;
+  margin-left: auto;
+}
+
+.message-box-2 {
+  width: fit-content;
+  max-width: 40%;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #FFE7EB;
+  padding: 10px;
+}
+
+// .message-box-2 .message-container {
+//   text-align: left;
+// }

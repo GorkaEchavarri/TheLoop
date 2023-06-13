@@ -1,7 +1,21 @@
-<div id="message-<%= message.id %>">
-  <small>
-    <strong><%= message.user.username %></strong>
-    <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-  </small>
-  <p><%= message.content %></p>
-</div>
+<% if message.user.username == current_user.username %>
+  <div class="message-box msg">
+    <div id="message-<%= message.id %>">
+      <small>
+        <strong><%= message.user.username %></strong>
+        <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+      </small>
+      <p><%= message.content %></p>
+    </div>
+  </div>
+<% else %>
+  <div class="message-box-2 msg">
+    <div id="message-<%= message.id %>">
+      <small>
+        <strong><%= message.user.username %></strong>
+        <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+      </small>
+      <p><%= message.content %></p>
+    </div>
+  </div>
+<% end %>
