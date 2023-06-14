@@ -1,29 +1,26 @@
-<%# <div class="search-container"> %>
-
-  <% @posts.each do |post|%>
-  <% @results.each do |result| %>
-<%#
-      <%= cl_image_tag post.first.photo.key, height: 50, width: 50, crop: :fill, style: "border-radius: 15px" if post.first.photo.key.present?%>
-     <%if result.searchable_type == "post" %>
-
-      <div class= "card my-3 p-3 text-bg-light d-flex flex-row">
-        <%= result.content %>
-      </div>
-
-      <div class="community-container">
-      <%elsif result.searchable_type == "community" %>
-
-        <div class= "card my-3 p-3 text-bg-light d-flex flex-row">
-          <%= result.content %>
-        </div>
-        </div>
-      <%else%>
-
-      <div class= "card my-3 p-3 text-bg-light d-flex flex-row">
-        <%= result.content %>
-      </div>
-
-      <% end %>
+<h1>Posts</h1>
+<% @posts.each do |post| %>
+  <%= link_to post_path(post.id) do%>
+    <div class= "card my-3 p-3 text-bg-light d-flex flex-row">
+      <%= post.title %>
+    </div>
   <% end %>
 <% end %>
-<%# </div> %>
+
+<h1>Communities</h1>
+<% @communities.each do |community| %>
+  <%= link_to community_path(community.id) do%>
+    <div class= "card my-3 p-3 text-bg-light d-flex flex-row">
+      <%= community.title %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>Comments</h1>
+<% @comments.each do |comment| %>
+  <%= link_to post_path(comment.post_id) do%>
+    <div class= "card my-3 p-3 text-bg-light d-flex flex-row">
+      <%= comment.content %>
+    </div>
+  <% end %>
+<% end %>
