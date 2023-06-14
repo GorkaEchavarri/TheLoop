@@ -8,50 +8,100 @@
 <div class="containerish mx-5 my-5">
 
   <% @posts.each do |post| %>
-    <% if post.community_id == @community.id %>
-      <div class= "card my-2 text-bg-light d-flex flex-row">
-        <div class= "card-body my-2">
-          <h3><%= link_to post.title, post_path(post) %></h3>
 
-          <%= post.content %>
+  <%if post.community_id == @community.id%>
+  <% user = post.user%>
 
-          <div class= "show-me-photo d-flex flex-column align-items-center mt-3">
-            <%= cl_image_tag post.photo.key, height: 300, width: 300, crop: :fill, style: "border-radius: 15px" if post.photo.key.present?%>
-          </div>
-
+  <div class="postz my-5">
+    <div class="d-flex justify-content-space-between">
+      <div class="post-avatar-title mb-4 w-75 align-items-center">
+        <div class="avatar">
+          <%= cl_image_tag user.photo.key, alt: "#{user.username}'s avatar", height: 100, width: 100, crop: :fill, style: "border-radius: 50% ; border: 2px solid #80c5bd;" if user.photo.key.present? %>
         </div>
-        <div class = "crud-buttons-n-stuff">
-          <div class = "post-icons">
-          <% if current_user.id == post.user_id %>
-              <div class = "post-hamburger-item">
-
-                  <%= link_to edit_post_path, data: { turbo_method: :get, turbo_confirm: "Are you sure you want to edit?"} do %>
-                    Edit This Post
-                  <%end%>
-
-                  <%= link_to delete_post_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this post?"} do %>
-                  Delete This post
-                  <%end%>
-
-              </div>
-            <%else%>
-             <div class = "post-hamburger-item">
-                <%= link_to flag_post_path(post), data: { turbo_method: :patch, turbo_confirm: "Are you sure you want to flag this post?"} do %>
-                  Flag this Post
-                <%end%>
-            </div>
+        <div class="post-user-name mx-3">
+          <%= link_to user_path(user.id) do %>
+            <h2 id="userz"><%= user.username %></h2>
           <% end %>
-          </div>
+        </div>
+        <div class="options d-flex flex-row justify-content-end"; style="height: fit-content; margin-top: 1.5rem;";>
+          <p class="post-pills mx-3"><%=user.user_type%></p>
+          <p class="post-pills mx-3"><%=user.status%></p>
         </div>
       </div>
-    <% end %>
-  <% end %>
+      <div class="w-25 d-flex flex-row-reverse" style="left: 50px; position: relative;">
+        <div class="dropdown">
+          <input type="checkbox" id="dropdown">
 
-  <div>
-    <%= link_to my_communities_path, { class: "member-info btn my-5" } do %>
-      Back To My Loops
-    <% end %>
+          <label class="dropdown__face" for="dropdown">
+            <div class="dropdown__text"><br></div>
+            <div class="dropdown__arrow"></div>
+          </label>
+
+          <ul class="dropdown__items justify-content-center">
+            <%if current_user.id == post.user_id %>
+              <li id="dropdown__list">
+                <%= link_to edit_post_path, data: { turbo_method: :get, turbo_confirm: "Are you sure you want to edit?"} do %>
+                  Edit This Post
+                <%end%>
+              </li>
+              <li id="dropdown__list">
+                <%= link_to delete_post_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this post?"} do %>
+                  Delete This post
+                <%end%>
+              </li>
+            <%else%>
+              <li id="dropdown__list">
+                <%= link_to flag_post_path(post), data: { turbo_method: :patch, turbo_confirm: "Are you sure you want to flag this post?"} do %>
+                  <i class="fa-solid fa-flag" style="color: #e22d06;"></i>
+                <%end%>
+              </li>
+            <%end%>
+          </ul>
+        </div>
+
+        <svg>
+          <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </svg>
+      </div>
+    </div>
+
+    <div class="post-content mx-3">
+      <div class="post-title">
+        <h2><%=post.title %></h2>
+      </div>
+      <div class="postcontent my-3">
+        <p><%=post.content%></p>
+      </div>
+      <div class="postimg d-flex justify-content-center my-5">
+        <%= cl_image_tag post.photo.key, height: 500, width: 500, crop: :fill, style: "border-radius: 15px;" if post.photo.key.present?%>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row-reverse my-3">
+      <div class="post-social-ctas">
+        <div id="arrow" style="display: flex; align-items: center;">
+          <i class="fa-solid fa-circle-arrow-up mx-1" style="color: #e22d06;"></i>
+          <p class="post-votes"><%=%>Upvotes</p>
+        </div>
+        <div id="commentz" style="display: flex; align-items: center;">
+          <i class="fa-regular fa-comment mx-1" style="color: #e22d06;"></i>
+          <p class="post-comments"><%= post.comments.count %> Comments</p>
+        </div>
+      </div>
+    </div>
   </div>
+  <% end %>
+  <%end%>
+</div>
 
 
+
+<div>
+  <%= link_to my_communities_path, { class: "member-info btn my-5" } do %>
+    Back To My Loops
+  <% end %>
 </div>
