@@ -172,19 +172,19 @@ comment4.save!
 
 # Comments For exercise Loop
 
-comment5 = Comment.create!(content: " I completely understand how you feel. Dealing with treatment can really drain your energy. One thing that helped me was incorporating gentle exercises into my routine, like stretching or short walks. It may not be as intense as my pre-treatment workouts, but it still helps me feel more energized. Remember, it's important to listen to your body and not push yourself too hard. Sending you positive vibes!", user_id: user3.id, post_id: post6.id)
+comment5 = Comment.create!(content: " I completely understand how you feel. Dealing with treatment can really drain your energy. One thing that helped me was incorporating gentle exercises into my routine, like stretching or short walks. It may not be as intense as my pre-treatment workouts, but it still helps me feel more energized. Remember, it's important to listen to your body and not push yourself too hard. Sending you positive vibes!", user_id: user3.id, post_id: post14.id)
 comment5.save!
 
-comment6 = Comment.create!(content: "I went through a similar phase during my treatment. One thing that worked for me was breaking exercise into smaller chunks throughout the day. Instead of trying to do a full workout in one go, I would do 10-minute exercises several times a day. It was more manageable and still helped me stay active. Don't be too hard on yourself and remember that even small efforts count!", user_id: user10.id, post_id: post6.id)
+comment6 = Comment.create!(content: "I went through a similar phase during my treatment. One thing that worked for me was breaking exercise into smaller chunks throughout the day. Instead of trying to do a full workout in one go, I would do 10-minute exercises several times a day. It was more manageable and still helped me stay active. Don't be too hard on yourself and remember that even small efforts count!", user_id: user10.id, post_id: post14.id)
 comment6.save!
 
-comment7 = Comment.create!(content: "I understand how tough it can be to find the motivation to exercise when you're tired. Have you considered trying some gentle yoga or tai chi? These practices can help improve your energy levels while being gentle on your body. Additionally, be sure to stay hydrated and nourish your body with healthy foods. Don't hesitate to consult with your healthcare team for personalized advice. You've got this!", user_id: user12.id, post_id: post6.id)
+comment7 = Comment.create!(content: "I understand how tough it can be to find the motivation to exercise when you're tired. Have you considered trying some gentle yoga or tai chi? These practices can help improve your energy levels while being gentle on your body. Additionally, be sure to stay hydrated and nourish your body with healthy foods. Don't hesitate to consult with your healthcare team for personalized advice. You've got this!", user_id: user12.id, post_id: post14.id)
 comment7.save!
 
-comment8 = Comment.create!(content: "I can totally relate to feeling tired during treatment. One thing that helped me was finding an exercise buddy or joining a support group that focuses on staying active. Having someone to exercise with and share experiences can provide the extra motivation and support you need. Remember, it's okay to start small and gradually increase your activity level. Your health and well-being are important!", user_id: user2.id, post_id: post6.id)
+comment8 = Comment.create!(content: "I can totally relate to feeling tired during treatment. One thing that helped me was finding an exercise buddy or joining a support group that focuses on staying active. Having someone to exercise with and share experiences can provide the extra motivation and support you need. Remember, it's okay to start small and gradually increase your activity level. Your health and well-being are important!", user_id: user2.id, post_id: post14.id)
 comment8.save!
 
-comment9 = Comment.create!(content: "I understand how challenging it can be to find the energy for exercise during treatment. One thing that helped me was exploring different types of low-impact exercises, such as swimming or cycling. These activities are gentler on the body while still providing a good workout. It's also essential to prioritize rest and listen to your body. Be kind to yourself and celebrate even the smallest victories!", user_id: user9.id, post_id: post6.id)
+comment9 = Comment.create!(content: "I understand how challenging it can be to find the energy for exercise during treatment. One thing that helped me was exploring different types of low-impact exercises, such as swimming or cycling. These activities are gentler on the body while still providing a good workout. It's also essential to prioritize rest and listen to your body. Be kind to yourself and celebrate even the smallest victories!", user_id: user9.id, post_id: post14.id)
 comment9.save!
 
 
