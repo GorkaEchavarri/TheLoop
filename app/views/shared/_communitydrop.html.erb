@@ -8,7 +8,7 @@
   </label>
 
   <ul class="dropdown__items justify-content-center">
-    <% postz = @post %>
+
     <% if current_user.id == postz.user_id %>
       <li id="dropdown__list">
         <%= link_to edit_post_path, data: { turbo_method: :get, turbo_confirm: "Are you sure you want to edit?"} do %>

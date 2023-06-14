@@ -1,31 +1,27 @@
 <%= render "shared/banner" %>
-<div class="postz mx-5">
-  <div class="d-flex">
-    <div class="post-avatar-title">
+
+<div class="postz my-5">
+  <div class="d-flex justify-content-space-between">
+    <div class="post-avatar-title mb-4 w-75 align-items-center">
       <div class="avatar">
-        <% if @user.photo.key.present? %>
-          <%= cl_image_tag @user.photo.key, height: 100, width: 100, crop: :fill, style: "border-radius: 50% ; border: 2px solid #80c5bd;" %>
-        <% else %>
-          <%# default avatar %>
+        <%= cl_image_tag @user.photo.key, alt: "#{@user.username}'s avatar", height: 100, width: 100, crop: :fill, style: "border-radius: 50% ; border: 2px solid #80c5bd;" if @user.photo.key.present? %>
+      </div>
+      <div class="post-user-name mx-3">
+        <%= link_to user_path(@user.id) do %>
+          <h2 id="userz"><%= @user.username %></h2>
         <% end %>
       </div>
-      <div class="d-flex flex-column">
-        <div class="post-user-name"><p id="userz"><%= @user.username %></p></div>
-
+      <div class="options d-flex flex-row justify-content-end"; style="height: fit-content; margin-top: 1.5rem;";>
+        <p class="post-pills mx-3"><%=@user.user_type%></p>
+        <p class="post-pills mx-3"><%=@user.status%></p>
       </div>
     </div>
-
-    <div class="post-pills">Status</div>
-    <div class="post-pills">pills</div>
-    <%= render "shared/postsdrop" %>
+      <div class="w-25 d-flex flex-row-reverse" style="left: 50px; position: relative;" >
+        <%= render "shared/postsdrop" %>
+      </div>
   </div>
 
 
-  <div class="post-content">
-  <div class="post-title"><h4><%=@post.title %>Hello hello testing testingHello hello testing testing</h4></div>
-    <%= @post.content %>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quidem exercitationem, sequi, molestias architecto fugit odio, cumque quam laboriosam fugiat alias eaque! Neque libero vero fugit asperiores dolores expedita doloribus optio esse maiores, nemo sequi modi harum ipsum ullam repellat corporis a possimus, porro, quisquam cum assumenda at. Nobis, necessitatibus!
-  </div>
 
   <div class="d-flex">
     <div class="post-social-ctas">
@@ -44,107 +40,54 @@
       <%= link_to post_comments_path(@post) do %>
         <div class="post-comments"><%= @comments_count %> Comments</div>
       <% end %>
+
+  <div class="post-content mx-3">
+    <div class="post-title">
+      <h2><%=@post.title %></h2>
+
+    </div>
+    <div class="postcontent my-3">
+      <p><%=@post.content%></p>
+    </div>
+    <div class="postimg d-flex justify-content-center my-5">
+      <%= cl_image_tag @post.photo.key, height: 500, width: 500, crop: :fill, style: "border-radius: 15px;" if @post.photo.key.present?%>
     </div>
   </div>
-</div>
-<%
-=begin %>
 
-  <div class="post-display mt-5">
-    <div class="poster-info-container d-flex">
-
-      <div class="avatar w-25">
-        <%= cl_image_tag @user.photo.key, height: 100, width: 100, crop: :fill, style: "border-radius: 50% ; border: 2px solid #80c5bd;" if @user.photo.key.present? %>
+  <div class="d-flex flex-row-reverse my-3">
+    <div class="post-social-ctas">
+        <div id="arrow" style="display: flex; align-items: center;">
+          <i class="fa-solid fa-circle-arrow-up mx-1" style="color: #e22d06;"></i>
+          <p class="post-votes"><%= @upvotes_count %> Upvotes</p>
       </div>
-
-      <div class = "username w-50">
-        <h3><%= @user.username%></h3>
-      </div>
-
-      <div class = "post-icons w-25">
-          <% if current_user.id == @post.user_id %>
-              <div class = "post-hamburger-item">
-
-                  <%= link_to edit_post_path, data: { turbo_method: :get, turbo_confirm: "Are you sure to edit?"} do %>
-                    Edit This Post
-                  <%end%>
-
-                  <%= link_to delete_post_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this post?"} do %>
-                  Delete This post
-                  <%end%>
-              </div>
-            <%else%>
-             <div class = "post-hamburger-item">
-
-                <%= link_to flag_post_path(@post), data: { turbo_method: :patch, turbo_confirm: "Are you sure you want to flag this post?"} do %>
-                  Flag this Post
-                <%end%>
-              </div>
-
-          <% end %>
-      </div>
-    </div>
-
-      <div class = "poster-text">
-        <div class = "title-container">
-          <h2><%=@post.title%></h2>
-        </div>
-      </div>
-    </div>
-
-    <div class = "content-info-container mt-3">
-      <div class = "content-container">
-        <%=@post.content%>
-      </div>
-
-      <div class= "show-me-photo">
-      <%= cl_image_tag @post.photo.key, height: 100, width: 100, crop: :fill, style: "border: 2px solid #80c5bd;" if @post.photo.key.present?%>
-      </div>
-      <div id = "upvote-container">
-        <%# < spanning upvote action < upvote icon>
-              < Post_upvotes.where(post_id == @post.id).count?>
-        > %>
+      <div id="commentz" style="display: flex; align-items: center;">
+        <i class="fa-regular fa-comment mx-1" style="color: #e22d06;"></i>
+        <p class="post-comments"><%= @comments_count %> Comments</p>
       </div>
     </div>
   </div>
 </div>
-<br>
-<br>
-<br>
-<div class = "container">
+
+<h2>Comments for <%=@post.title%></h2>
 <div class = "commentsgetrenderedhere mt-5">
-
-
-
-  <h2>All comments</h2>
-    <% @post.comments.each do |comment| %>
-      <div class="card mb-1">
-        <div class="card-body">
-          <%= comment.user.username %>
-          <br>
-          <%= comment.content %>
-
-        </div>
+  <% @post.comments.each do |comment| %>
+    <div class="card mb-1">
+      <div class="card-body">
+        <%= comment.user.username %>
+        <br>
+        <%= comment.content %>
       </div>
-      <div class = "buttons-here">
+    </div>
+    <div class = "buttons-here">
         <%= link_to "Delete",
             delete_comment_path(comment),
             data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if current_user.id == comment.user_id
           %>
-      </div>
+    </div>
+  <% end %>
+</div>
+
+
+<%= link_to community_path(@community), { class: "member-info btn my-5" } do %>
+  Back To <%=@community.title%>
 <% end %>
-</div>
-
-
-
-</div>
-
-
-<div>
-    <%= link_to community_path(@community), { class: "member-info btn my-5" } do %>
-      Back To <%=@community.title%>
-    <% end %>
-</div>
-
-<%
-=end%>
