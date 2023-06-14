@@ -1,7 +1,5 @@
 <% if user_signed_in? %>
-
-<div id="footer">
-  <footer>
+  <div id="footer">
     <div class="footer-container">
       <div>
         <%= link_to 'Find Others', users_path %>
@@ -11,18 +9,13 @@
         <%= link_to 'Profile', user_path(current_user.id) %>
       </div>
     </div>
-  </footer>
-</div>
-
-
+  </div>
 <% else %>
   <div id="footer">
-    <footer>
-      <div class="footer-container">
-        <div class="centered-text">
-          <p id="copyright" style="font-size: 12px !important"; >The Loop, 2023. All Rights Reserved</p>
-        </div>
+    <div class="footer-container">
+      <div class="centered-text">
+        <p id="copyright" style="font-size: 12px !important"; >The Loop, 2023. All Rights Reserved</p>
       </div>
-    </footer>
+    </div>
   </div>
 <% end %>
