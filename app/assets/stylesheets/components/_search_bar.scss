@@ -19,11 +19,18 @@
 
 }
 
+
+
 .search-icon {
   position: absolute;
   padding: 9px;
   margin-top: -21px;
   margin-left: 9px;
+  font-size: 10px;
+}
+
+.fa-solid::before {
+  font-size: 16px;
 }
 
 .search-placeholder {
@@ -34,21 +41,23 @@
 
 }
 
+
+
 #search input[type="text"] {
-  border: 1px solid $flamingopink;
+  border: 1px solid rgb(255, 229, 233);
   border-radius: 32px;
   padding: 5px 20px 5px 40px;
   width: 450px;
-  height: 35px;
+  height: 32px;
   color: $bloodred;
 
 }
 
 #search input:hover {
-  border-color: $communitypink;
+  border-color: $bloodred;
 }
 
 
-.search-container {
-  display: flex;
+.search-input:focus-visible {
+outline: none !important;
 }

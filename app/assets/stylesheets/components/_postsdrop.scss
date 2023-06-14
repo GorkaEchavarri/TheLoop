@@ -1,13 +1,8 @@
 
-.post-dropdown {
+.dropdown {
   position: relative;
   width: 130px;
   filter: url(#goo);
-
-  margin-right: 2rem;
-  position: relative;
-  display: inline-block;
-  justify-content: left;
 
   &__face {
     display: block;
