@@ -1,0 +1,5 @@
+meta_name: "theLoop"
+meta_title: "inTheLoop - A place for anyone impacted by Cancer, whether you have been diagnosed or are supporting a loved one"
+meta_description: "The Loop provides access to a community who are there to listen, share information and offer valuable advice"
+meta_image: "loops.png" # should exist in `app/assets/images/`
+twitter_account: "@your_twitter_account"   # required for Twitter Cards
