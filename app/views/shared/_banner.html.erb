@@ -1,4 +1,4 @@
-<div class="banner-container d-flex" style ="width: 75rem; height: 20rem;">
+<div class="banner-container d-flex" style ="height: 15rem;">
   <%# <needs imagesource directed to community.image>  %>
   <div class="community-details-container w-75 text-start">
     <div class="community_title h-50">
@@ -8,12 +8,15 @@
       <h3><%= @community.description%></h3>
     </div>
   </div>
+
   <div class="button-container w-25 d-flex align-items-center justify-content-evenly flex-column">
-    <%= link_to root_path, { class: "join-btn btn btn-sm" } do %>
-      Join this Loop
-    <% end %>
+    <% if controller_name == 'communities' && action_name == 'show' && @membership.nil? %>
+      <%= link_to community_memberships_path(@community), data: {turbo_method: :post }, class: "join-btn btn btn-sm"  do %>
+        Join this Loop
+      <% end %>
+
     <%= link_to root_path, { class: "member-info btn btn-sm" } do %>
-      3 Members
+      <%= "#{@memberships_count} #{"Member".pluralize(@memberships_count)}" %>
     <% end %>
   </div>
 </div>
