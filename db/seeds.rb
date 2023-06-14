@@ -126,7 +126,7 @@ post12.save!
 post13 = Post.create!(title: "Does anyone do rock climbing? I want to try it", content: "Hello everyone! I hope you're all doing well. I've been inspired to try new things and step out of my comfort zone, and one activity that has always intrigued me is rock climbing. I was wondering if there's anyone here who has experience with rock climbing. I would love to connect with fellow climbers, learn from your experiences, and perhaps even find a climbing buddy or group. It would be fantastic to have someone to support and encourage each other as we venture into this exciting activity together. If you're a seasoned rock climber or if you're also interested in trying it out like me, please leave a comment or send me a private message. Looking forward to hearing from you all!", user_id: user3.id, community_id: comm4.id)
 post13.save!
 
-post14 = Post.create!(title: "Too tired to exercise", content: "I am too tired to exercise since I started with the treatment. Any advice?", user_id: user11.id, community_id: comm4.id)
+post14 = Post.create!(title: "Too tired to exercise", content: "I am too tired to exercise since I started with the treatment. Any advice?", user_id: user8.id, community_id: comm4.id)
 post14.save!
 
 post15 = Post.create!(title: "Thank you for your suppor Exercise Loop!", content: "Thank you all for all your support during this rough time.", user_id: user8.id, community_id: comm4.id)
