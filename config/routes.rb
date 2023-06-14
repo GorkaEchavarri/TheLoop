@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   resources :posts, only: %i[show edit update destroy] do
     resources :comments, only: %i[index new create edit update]
+    resources :post_upvotes, only: :create
   end
 
   get "communities/:id", to:"posts#new"

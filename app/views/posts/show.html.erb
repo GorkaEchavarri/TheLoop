@@ -29,10 +29,21 @@
 
   <div class="d-flex">
     <div class="post-social-ctas">
-      <div id="arrow"><i class="fa-solid fa-circle-arrow-up" style="color: #e22e06;"></i></div>
-      <div class="post-votes"><%= @upvotes_count %> Upvotes</div>
+
+      <% if @post_vote.nil? %>
+        <div class="post-votes" style="color: red"><%= "#{@posts_count} #{"Upvote".pluralize(@posts_count)}" %></div>
+        <div id="arrow"><i class="fa-solid fa-circle-arrow-up" style="color: #e22e06;"></i></div>
+        <%= link_to post_post_upvotes_path(@post), data: {turbo_method: :post} do %>
+          <div class="post-votes"><%= @upvotes_count %> Upvote</div>
+        <% end %>
+      <% else %>
+          <div class="post-votes" style="color: red"><%= "#{@posts_count} #{"Upvote".pluralize(@posts_count)}" %></div>
+      <% end %>
+
       <div id="commentz"><i class="fa-regular fa-comment" style="color: #e22e06;"></i></div>
-      <div class="post-comments"><%= @comments_count %> Comments</div>
+      <%= link_to post_comments_path(@post) do %>
+        <div class="post-comments"><%= @comments_count %> Comments</div>
+      <% end %>
     </div>
   </div>
 </div>
