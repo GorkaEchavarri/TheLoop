@@ -15,7 +15,6 @@
         </div>
       <% end %>
       <%= text_field_tag :query, nil, placeholder: 'Search...', class: "search-input" %>
-
     <% end %>
 
 
@@ -24,30 +23,25 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
 
-        <div class="dropdown">
+        <div class="home-dropdown">
           <button class="dropdown-btn"><i class="fa-regular fa-bell"></i>
           </button>
           <div class="dropdown-content">
-            <a href="#">Notification 1</a>
-            <a href="#">Notification 2</a>
+            <%# <a href="#">Notification 1</a>
+            <a href="#">Notification 2</a> %>
           </div>
         </div>
 
-
-          <li class="nav-item">
-            <%= link_to "Users", "../users", class: "nav-link" %>
-          </li>
-
-          <li class="nav-item">
-            <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "nav-link" %>
-          </li>
-
-          <li >
-          <% if current_user.photo.key%>
-            <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :fill, style: "border-radius: 50%; margin-left: 8px"%>
+          <li class="nav-item home-dropdown">
+            <% if current_user.photo.key %>
+              <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :fill, style: "border-radius: 50%; margin-left: 8px", class: "dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% else %>
-            <img src="https://res.cloudinary.com/dgqqot40q/image/upload/v1686230942/TheLoop/placeholder_hfuoup.png" alt="A placeholder profile picture" height="45" width="45">
+              <img src="https://res.cloudinary.com/dgqqot40q/image/upload/v1686230942/TheLoop/placeholder_hfuoup.png" alt="A placeholder profile picture" height="45" width="45">
             <% end %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Users", "../users", class: "dropdown-item" %>
+              <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "dropdown-item" %>
+            </div>
           </li>
 
         <% else %>

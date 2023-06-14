@@ -30,20 +30,22 @@
   position: absolute;
   margin-top: -33px;
   margin-left: 7px;
+  color: $bloodred;
 
 }
 
 #search input[type="text"] {
-  border: 1px solid #ccc;
+  border: 1px solid $flamingopink;
   border-radius: 32px;
   padding: 5px 20px 5px 40px;
-  width: 550px;
-  height: 40px;
+  width: 450px;
+  height: 35px;
+  color: $bloodred;
+
 }
 
 #search input:hover {
-  border-color: #0D6EFD;
-  ;
+  border-color: $communitypink;
 }
 
 
