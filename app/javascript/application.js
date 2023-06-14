@@ -5,3 +5,5 @@ import "controllers"
 // external libraries
 import "@popperjs/core"
 import "bootstrap"
+import "@rails/actioncable"
+import "./channels"

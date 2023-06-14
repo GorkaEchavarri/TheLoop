@@ -13,6 +13,9 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[index show edit update]
 
+  resources :chatrooms, only: %i[index show new create] do
+    resources :messages, only: :create
+  end
 
   resources :posts, only: %i[show edit update destroy] do
     resources :comments, only: %i[index new create edit update]
@@ -28,5 +31,6 @@ Rails.application.routes.draw do
   delete "post/:id/delete", to: "comments#destroy", as: :delete_comment
 
   get "mycommunities", to: "communities#mycommunities", as: :my_communities
+
 
 end

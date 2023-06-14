@@ -10,6 +10,9 @@
 # clean up the database
 puts "Cleaning database"
 Comment.destroy_all
+
+# delete all chatrooms
+Chatroom.destroy_all
 #delete all comments
 Post.destroy_all
 # delete_all users

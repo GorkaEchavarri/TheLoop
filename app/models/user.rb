@@ -1,4 +1,10 @@
 class User < ApplicationRecord
+
+  TYPES = {
+    "Circle" => "👥",
+    "In-treatment" => "🏥",
+    "Recovered" => "🎉"
+  }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :friendships_as_asker, class_name: "Friendship", foreign_key: :asker_id
@@ -21,4 +27,8 @@ class User < ApplicationRecord
 
   # validates :status, inclusion: %w[in-treatment recovered]
   has_one_attached :photo
+
+  def age
+    Date.today.year - date_of_birth.year unless date_of_birth.nil?
+  end
 end
