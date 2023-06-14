@@ -132,12 +132,7 @@
   margin-bottom: 5rem;
 }
 
-// .landing-emoji {
-//   float: right;
-//   padding-right: 200px;
-// }
-
-.flex-container {
-  display: flex;
-  justify-content: space-between;
+#main-action:hover {
+  transform: scale(1.05);
+  transition: transform .5s ease
 }
