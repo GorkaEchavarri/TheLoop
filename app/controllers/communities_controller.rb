@@ -8,6 +8,8 @@ class CommunitiesController < ApplicationController
     @community = Community.find(params[:id])
     @posts = Post.all
     @post = Post.new
+    @membership = Membership.find_by(community_id: @community.id, user_id: current_user.id)
+    @memberships_count = Membership.where(community_id: @community.id).count
   end
 
   def new

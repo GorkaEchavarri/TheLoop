@@ -4,7 +4,7 @@ class Comment < ApplicationRecord
   validates :content, presence: true
   validates :content, length: { maximum: 2000 }
 
-  # include PgSearch::Model
+  include PgSearch::Model
 
-  # multisearchable against: :content
+  multisearchable against: :content
 end

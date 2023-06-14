@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :communities do
     resources :posts, only: %i[new create]
+    resources :memberships, only: :create
   end
 
   resources :searches, only: %i[index]
