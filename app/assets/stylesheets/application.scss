@@ -15,11 +15,13 @@
 @import "components/post";
 @import "components/postsdrop";
 @import "components/footer";
+@import "components/usercard";
 @import "components/community";
 
 // //body in all pages
 body {
   overflow-x: hidden;
+  max-width: 100% !important;
 }
 
 // Set titles color
