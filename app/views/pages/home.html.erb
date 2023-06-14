@@ -25,7 +25,7 @@
 
           <div class="text-container">
             <%if user_signed_in? %>
-              <div class ="Heronav">
+              <div class ="Heronav" id="main-action">
                 <%= link_to my_communities_path do %>
                   <div class="col-sm-9" id="getin">
                     <h1 class="h1-large">Get in</h1>
@@ -70,6 +70,11 @@
         <div id="value1">
           <h3>Get advice    🗣️</h3>
         </div>
+
+        <%= link_to my_communities_path do %>
+          <button type="button" class="btn btn-outline-danger w-25 mx-auto p-3 m-3">Join Now!</button>
+        <% end %>
+
         </div>
       </div>
     </div>
