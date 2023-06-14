@@ -1,21 +1,20 @@
 <br>
 
 <div class="container justify-content-center mx-12 p-2 border rounded" style="width:900px" id="user-card">
-<h1 class="m-3">Profile page of <%= @user.username %></h1>
+<h1 id="profiletitle" class="m-3"><%= @user.username %>'s Profile Page</h1>
 <div class="container d-flex">
 
   <div class="container d-flex flex-column col-8">
-    <div class="card">
-    <h3>Bio:</h3>
+    <div id="biocard" class="card">
     <%= @user.bio %>
     </div>
     <br>
-    <div class="card">
-    <h3>Recent posts:</h3>
-    <br>
-    <br>
-    <br>
-    </div>
+      <b>Date of Birth:</b><%= @user.date_of_birth %>
+      <b>Location:</b><%= @user.region %>
+      <b>Status:</b>
+      <%= @user.user_type.capitalize() %>
+      <b>Diagnosis:</b><%= @user.status %>
+
     </div>
 
     <div class="container d-flex flex-column col-4 row text-center">
@@ -28,12 +27,6 @@
       <%= @user.first_name %>
       <%= @user.last_name %>
       </strong>
-      <%= @user.date_of_birth %>
-      <%= @user.region %>
-      <br>
-      <%= @user.user_type.capitalize() %>
-      <br>
-      <%= @user.status %>
       <button type="button" class="btn btn-outline-danger m-1 mx-auto">Add as a friend</button>
       <%# <button type="button" class="btn btn-outline-danger mx-auto">Direct message</button> %>
       <%# <%= link_to "Direct message", new_chatroom_path(), class: "btn btn-outline-danger m-1 mx-auto" %>
