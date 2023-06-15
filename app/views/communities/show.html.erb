@@ -22,7 +22,9 @@
         </div>
         <div class="options d-flex flex-row justify-content-end"; style="height: fit-content; margin-top: 1.5rem;";>
           <p class="post-pills mx-3"><%=user.user_type%></p>
+          <% if user.status != nil %>
           <p class="post-pills mx-3"><%=user.status%></p>
+          <% end %>
         </div>
       </div>
       <div class="w-25 d-flex flex-row-reverse" style="left: 50px; position: relative;">
