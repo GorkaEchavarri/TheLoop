@@ -2,8 +2,9 @@
   <h1>Posts</h1>
   <% @posts.each do |post| %>
     <%= link_to post_path(post.id) do%>
-      <div class= "card my-3 p-3 text-bg-light d-flex flex-row">
-        <%= post.title %>
+      <div style="background-color: #ffe7eb" class= "card my-3 p-3">
+        <h5><%= post.title %></h5>
+        <%= post.content %>
       </div>
     <% end %>
   <% end %>
@@ -13,8 +14,9 @@
   <h1>Communities</h1>
   <% @communities.each do |community| %>
     <%= link_to community_path(community.id) do%>
-      <div class= "card my-3 p-3 text-bg-light d-flex flex-row">
-        <%= community.title %>
+      <div style="background-color: #ffe7eb" class= "card my-3 p-3">
+        <h5><%= community.title %></h5>
+        <%= community.description %>
       </div>
     <% end %>
   <% end %>
@@ -24,7 +26,7 @@
   <h1>Comments</h1>
   <% @comments.each do |comment| %>
     <%= link_to post_path(comment.post_id) do%>
-      <div class= "card my-3 p-3 text-bg-light d-flex flex-row">
+      <div style="background-color: #ffe7eb" class= "card my-3 p-3">
         <%= comment.content %>
       </div>
     <% end %>
