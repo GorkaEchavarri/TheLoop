@@ -41,6 +41,8 @@ class CommunitiesController < ApplicationController
 
   def mycommunities
     @communities = Community.all
+    @community_ids = Membership.where(user_id: current_user.id).pluck(:community_id)
+    @my_loops = Community.find(@community_ids)
   end
 
   private
