@@ -65,7 +65,7 @@ user8.photo.attach(io: file8, filename: "User8.jpeg", content_type: "images/jpeg
 user8.save!
 
 file9 = File.open("./db/images/User9.png")
-user9 = User.create!(email: "sunny@lewagon.com", password: "123456", first_name: "Sunny", last_name: "Thapa", username: "Sunny", bio: "I'm Sunny, I find solace in the realms of painting and books. Despite the challenges posed by my health, I immerse myself in vibrant strokes of colors, creating art that reflects my spirit's resilience. In the pages of books, I discover solace, knowledge, and endless worlds to explore. Through the brush and the written word, I defy the limitations imposed by my illness, allowing my creativity and imagination to flourish, bringing light into each moment. Message me to talk about anything :)", user_type: "In-treatment", status: "T-cell Acute", date_of_birth: "05/10/75", region: "United Kingdom")
+user9 = User.create!(email: "sunny@lewagon.com", password: "123456", first_name: "Sunny", last_name: "Thapa", username: "Sunny", bio: "I'm Sunny, I've got Acute Leukaemia. I find solace in the realms of painting and books. Despite the challenges posed by my health, I immerse myself in vibrant strokes of colors, creating art that reflects my spirit's resilience. In the pages of books, I discover solace, knowledge, and endless worlds to explore. Through the brush and the written word, I defy the limitations imposed by my illness, allowing my creativity and imagination to flourish, bringing light into each moment. Message me to talk about anything :)", user_type: "In-treatment", status: "T-Cell ALL", date_of_birth: "05/10/75", region: "United Kingdom")
 user9.photo.attach(io: file9, filename: "User9.png", content_type: "images/png")
 user9.save!
 
@@ -80,13 +80,13 @@ user11.photo.attach(io: file11, filename: "User11.jpeg", content_type: "images/j
 user11.save!
 
 file12 = File.open("./db/images/User12.jpeg")
-user12 = User.create!(email: "johnny@example.com", password: "123456", first_name: "Johnny", last_name: "Wordsworth", username: "JohnnyW", bio: "Hi friend :), I want to share my experiences, make new friends, and extend a helping hand to those in need. Through TheLoop, I want to share a supportive space where we can freely discuss the challenges and triumphs of the cancer journey. Together, we can inspire and uplift one another, fostering a community of strength, resilience, and unwavering support.", user_type: "In-treatment", status: "T-cell Acute", date_of_birth: "05/10/75", region: "United Kingdom")
+user12 = User.create!(email: "johnny@example.com", password: "123456", first_name: "Johnny", last_name: "Wordsworth", username: "JohnnyW", bio: "Hi friend :), I want to share my experiences, make new friends, and extend a helping hand to those in need. Through TheLoop, I want to share a supportive space where we can freely discuss the challenges and triumphs of the cancer journey. Together, we can inspire and uplift one another, fostering a community of strength, resilience, and unwavering support.", user_type: "In-treatment", status: "T-cell ALL", date_of_birth: "05/10/75", region: "United Kingdom")
 user12.photo.attach(io: file12, filename: "User12.jpeg", content_type: "images/jpeg")
 user12.save!
 
 puts "creating communities"
 # create! 5 communities
-comm1 = Community.create!(title: "Colon Cancer", description: "This is a community for people with colon cancer", user_id: user1.id)
+comm1 = Community.create!(title: "Cancer Awareness", description: "A community for people raising money for cancer. 🏃‍♂️", user_id: user1.id)
 comm1.save!
 
 comm2 = Community.create!(title: "Testicular Cancer", description: "This is a community for people with testicular cancer",user_id: user2.id)
@@ -95,16 +95,15 @@ comm2.save!
 comm3 = Community.create!(title: "Breast Cancer", description: "This is a community for people with breast cancer", user_id: user3.id)
 comm3.save!
 
-comm4 = Community.create!(title: "Exercise", description: "This is a community for young people exercising with cancer", user_id: user4.id)
+comm4 = Community.create!(title: "Exercise Tips", description: "A loop for people wanting to find exercise advice in treatment.", user_id: user4.id)
 comm4.save!
 
-comm5 = Community.create!(title: "More Exercise", description: "This is a community for young people exercising even more with cancer", user_id: user5.id)
+comm5 = Community.create!(title: "Food in treatment", description: "This is a community for people looking for recipes when on chemotherapy.", user_id: user5.id)
 comm5.save!
 
-#for demo
-
-comm6 = Community.create!(title: "Gorka Support Group", description: "This is a community for people who love and suport Gorka", user_id: user10.id)
+comm6 = Community.create!(title: "Teenage Support Group", description: "This is a community for teenagers diagnosed with cancer", user_id: user10.id)
 comm6.save!
+#for demo
 
 puts "Loop for demo created"
 
@@ -117,7 +116,7 @@ post1.save!
 post2 = Post.create!(title: "I have testicular cancer", content: "I have testicular cancer and I am looking for people to talk to about it", user_id: user2.id, community_id: comm2.id)
 post2.save!
 
-post3 = Post.create!(title: "Gym day after session", content: "How do you goes schedule your gym days after a Chemo Treatment?", user_id: user3.id, community_id: comm3.id)
+post3 = Post.create!(title: "Gym day after session", content: "How do you goes schedule your gym days after a Chemo Treatment?", user_id: user3.id, community_id: comm4.id)
 post3.save!
 
 post12 = Post.create!(title: "Someone for a football team?", content: "Hello everyone! I'm looking to form a football team with fellow cancer fighters. Football has always been my passion, and I believe it can bring us together as a community. It doesn't matter if you're a beginner or an experienced player. Let's have fun, stay active, and support each other on and off the field. If you're interested, please leave a comment below or send me a private message. Looking forward to playing with you all! ", user_id: user5.id, community_id: comm4.id)
@@ -132,8 +131,6 @@ post14.save!
 post15 = Post.create!(title: "Thank you for your suppor Exercise Loop!", content: "Thank you all for all your support during this rough time.", user_id: user8.id, community_id: comm4.id)
 post15.save!
 
-post4 = Post.create!(title: "Hello!", content: "I have breast cancer and I am looking for people to talk to about it", user_id: user4.id, community_id: comm4.id)
-post4.save!
 
 post5 = Post.create!(title: "hey!", content: "I have colon cancer and I am looking for people to talk to about it to", user_id: user5.id, community_id: comm5.id)
 post5.save!
@@ -186,6 +183,19 @@ comment8.save!
 
 comment9 = Comment.create!(content: "I understand how challenging it can be to find the energy for exercise during treatment. One thing that helped me was exploring different types of low-impact exercises, such as swimming or cycling. These activities are gentler on the body while still providing a good workout. It's also essential to prioritize rest and listen to your body. Be kind to yourself and celebrate even the smallest victories!", user_id: user9.id, post_id: post14.id)
 comment9.save!
+
+# Heroku seed
+post_h = Post.create!(title: "My Doctor Said This", content: "Hi everyone! I'm currently in recovery from cancer, and my doctor recommended light exercises to help with my healing process. Walking has been a great exercise for me. It's low-impact and allows me to get some fresh air. Plus, it's a great way to gradually build up my strength. Give it a try if you're in a similar situation! #RoadToRecovery #WalkingForHealth", user_id: user4.id, community_id: comm4.id)
+
+Post_j = Post.create!(title: "Yoga is Great! 🧘‍♂️", content: "Hey there! As someone who went through cancer recovery myself, I found yoga to be incredibly beneficial. It helps improve flexibility, balance, and overall strength. Plus, it has a calming effect on the mind, which is essential during this challenging time. Start with gentle poses and gradually increase the intensity. Remember to always listen to your body and consult with your healthcare team. Stay strong! 💪 #YogaForHealing", user_id: user5.id, community_id: comm4.id)
+
+Post_k = Post.create!(title: "Jogging works for me!!", content: "Hi everyone! I'm currently in recovery from cancer, and my doctor recommended light exercises to help with my healing process. Walking has been a great exercise for me. It's low-impact and allows me to get some fresh air. Plus, it's a great way to gradually build up my strength. Give it a try if you're in a similar situation! #RoadToRecovery #WalkingForHealth", user_id: user6.id, community_id: comm4.id)
+
+Post_l = Post.create!(title: "Personally, I love to make ginger tea. ", content: "Hi everyone! I'm currently in recovery from cancer, and my doctor recommended light exercises to help with my healing process. Walking has been a great exercise for me. It's low-impact and allows me to get some fresh air. Plus, it's a great way to gradually build up my strength. Give it a try if you're in a similar situation! #RoadToRecovery #WalkingForHealth", user_id: user6.id, community_id: comm4.id)
+
+post_h = Post.create!(title: "Recommend low fat foods!", content: "Hi! I completely empathise with feeling nauseous. When I experience it, I tend to stick to foods that are low in fat and high in carbohydrates. Some examples include plain baked potatoes, steamed vegetables like carrots or green beans, or plain pasta. It's also important to stay hydrated, so sipping on clear liquids such as water or herbal tea can be beneficial. Remember, everyone's tolerance for different foods varies, so find what works best for you. Take care!", user_id: user6.id, community_id: comm5.id)
+
+
 
 
 puts "done"
