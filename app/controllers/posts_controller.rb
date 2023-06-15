@@ -25,6 +25,7 @@ class PostsController < ApplicationController
     @community = Community.find(community_id)
     @user = User.find(user_id)
     @post = Post.find(params[:id])
+    @comment = Comment.new
     @current_user = current_user
     @post_vote = PostUpvote.find_by(user_id: @current_user.id, post_id: @post)
     @posts_count = PostUpvote.where(post_id: @post.id).count
