@@ -29,6 +29,7 @@ class PostsController < ApplicationController
     @current_user = current_user
     @post_vote = PostUpvote.find_by(user_id: @current_user.id, post_id: @post)
     @posts_count = PostUpvote.where(post_id: @post.id).count
+    @membership = Membership.find_by(community_id: @post.community_id, user_id: current_user.id)
     @memberships_count = Membership.where(community_id: @community.id).count
   end
 
