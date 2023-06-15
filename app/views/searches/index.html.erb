@@ -4,7 +4,7 @@
     <%= link_to post_path(post.id) do%>
       <div style="background-color: #ffe7eb" class= "card my-3 p-3">
         <h5><%= post.title %></h5>
-        <%= post.content %>
+        <p class="text-black"><%= post.content %></p>
       </div>
     <% end %>
   <% end %>
@@ -16,7 +16,7 @@
     <%= link_to community_path(community.id) do%>
       <div style="background-color: #ffe7eb" class= "card my-3 p-3">
         <h5><%= community.title %></h5>
-        <%= community.description %>
+        <p class="text-black"><%= community.description %></p>
       </div>
     <% end %>
   <% end %>
@@ -27,7 +27,7 @@
   <% @comments.each do |comment| %>
     <%= link_to post_path(comment.post_id) do%>
       <div style="background-color: #ffe7eb" class= "card my-3 p-3">
-        <%= comment.content %>
+        <p class="text-black"><%= comment.content %></p>
       </div>
     <% end %>
   <% end %>
