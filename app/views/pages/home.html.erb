@@ -1,7 +1,7 @@
 <div class = "realign">
   <div id="fullpage" data-controller='home'>
     <div class="d-flex flex-row-reverse">
-      <div class="menuButton" data-action='click->home#toggleMenu'>
+      <div class="d-none" data-action='click->home#toggleMenu'>
         <span></span>
         <span></span>
         <span></span>
@@ -57,22 +57,22 @@
     <div class = "my-5">
     <div class="values py-5">
       <h1 id="value2">Why Join The Loop?</h1>
-      <div class="row">
+      <div class="valuerow row">
         <div id="value1">
-          <h3>Talk to people in your shoes    👣</h3>
+          <h3>Talk to people in your shoes. 👣</h3>
         </div>
         <div id="value1">
-          <h3>Share what works    💡</h3>
+          <h3>Share what worked for you. 💡</h3>
         </div>
         <div id="value1">
-          <h3>Help others    🤝</h3>
+          <h3>Help others who are in treatment.  🤝</h3>
         </div>
         <div id="value1">
-          <h3>Get advice    🗣️</h3>
+          <h3>Get advice from people who've recovered.   🗣️</h3>
         </div>
 
         <%= link_to my_communities_path do %>
-          <button type="button" class="btn btn-outline-danger w-25 mx-auto p-3 m-3">Join Now!</button>
+          <button type="button" class="startbutton btn btn-outline-danger w-25 mx-auto p-3 m-3">Get started</button>
         <% end %>
 
         </div>
