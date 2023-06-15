@@ -1,23 +1,46 @@
+
+<div class="container mb-3" style="width:900px">
+  <%= link_to users_path, { class: "btn btn-outline-danger mt-2" } do %>
+      All users
+  <% end %>
+</div>
+
+
 <br>
 
 <div class="container justify-content-center mx-12 p-2 border rounded" style="width:900px" id="user-card">
-<h1 id="profiletitle" class="m-3"><%= @user.username %>'s Profile Page</h1>
+  <h1 id="profiletitle" class="m-3"><%= @user.username %>'s Profile Page</h1>
 <div class="container d-flex">
 
   <div class="container d-flex flex-column col-8">
     <div id="biocard" class="card">
-    <%= @user.bio %>
+      <%= @user.bio %>
     </div>
     <br>
-      <b>Date of Birth:</b><%= @user.date_of_birth %>
-      <b>Location:</b><%= @user.region %>
-      <b>Status:</b>
-      <%= @user.user_type.capitalize() %>
-      <b>Diagnosis:</b><%= @user.status %>
 
+    <div class="row">
+    <div class="col-6">
+      <div class="mb-2">
+        <b>Date of Birth: </b><%= @user.date_of_birth %>
+      </div>
+      <div>
+        <b>Location: </b><%= @user.region %>
+      </div>
     </div>
 
-    <div class="container d-flex flex-column col-4 row text-center">
+    <div class="col-6">
+      <div class="mb-2">
+        <b>Status: </b> <%= @user.user_type.capitalize() %>
+        <span id="card-user"><%= User::TYPES[@user.user_type] %></span>
+      </div>
+      <div>
+        <b>Diagnosis: </b><%= @user.status %>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="container d-flex flex-column col-4 row text-center">
       <% if @user.photo.key%>
         <%= cl_image_tag @user.photo.key, height: 200, width: 200, crop: :fill, style: "border-radius: 50%;height: 200px;width: 220px;margin: auto;"%>
       <% else %>
@@ -40,8 +63,3 @@
 </div>
 </div>
 <br>
-
-
-  <%= link_to users_path, { class: "btn btn-outline-danger mx-4 mt-5" } do %>
-      All users
-  <% end %>
