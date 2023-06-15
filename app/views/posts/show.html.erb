@@ -13,7 +13,9 @@
       </div>
       <div class="options d-flex flex-row justify-content-end"; style="height: fit-content; margin-top: 1.5rem;";>
         <p class="post-pills mx-3"><%=@user.user_type%></p>
-        <p class="post-pills mx-3"><%=@user.status%></p>
+        <%if @user.status%>
+          <p class="post-pills mx-3"><%=@user.status%></p>
+        <%end%>
       </div>
     </div>
       <div class="w-25 d-flex flex-row-reverse" style="left: 50px; position: relative;" >
@@ -66,13 +68,12 @@
 
 <div class="d-flex mb-5">
   <div class="postcomentz w-50">
-    <h2 class="text-center">Comments for <%=@post.title%></h2>
+    <h2 class="text-center">Comments For <%=@post.title%></h2>
     <div class = "commentsgetrenderedhere mt-5">
       <% @post.comments.each do |comment| %>
         <div class="card py-2 px-2 mb-2">
           <div class="card-body pt-2">
-            <%= comment.user.username %>
-            <br>
+            <h5 class="mb-3"><%= comment.user.username %></h5>
             <%= comment.content %>
           </div>
 
@@ -90,8 +91,8 @@
       <% end %>
     </div>
   </div>
-  <div class="commentsnewform w-50" style="height: fit-content; position: sticky; top: 20px;">
-    <h2 class="text-center">Submit new comment</h2>
+  <div class="commentsnewform w-50" style="height:50%; position: sticky; top: 20px;">
+    <h2 class="text-center">Submit A Comment</h2>
     <%= render "comments/new"%>
   </div>
 </div>
