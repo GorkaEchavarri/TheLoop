@@ -1,11 +1,8 @@
 <%= render "shared/banner"%>
-
-  <div class = "new form mx-5">
-    <%= render "posts/new"%>
-  </div>
+<div class="d-flex">
 
 
-<div class="containerish mx-5 my-5">
+<div class="containerish mx-1 my-5 w-75">
 
   <% @posts.each do |post| %>
 
@@ -101,7 +98,11 @@
   <%end%>
 </div>
 
+<div class = "new-form mx-2 w-25 h-50">
+  <%= render "posts/new"%>
+</div>
 
+</div>
 
 <div>
   <%= link_to my_communities_path, { class: "btn-outline-danger btn my-5" } do %>
