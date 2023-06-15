@@ -12,7 +12,7 @@
 
 
   <div class="button-container w-25 d-flex align-items-center justify-content-evenly flex-column">
-    <% if controller_name == 'communities' && action_name == 'show' && @membership.nil?%>
+    <% if (controller_name == 'communities' || controller_name == 'posts') && action_name == 'show' && @membership.nil?%>
       <%= link_to community_memberships_path(@community), data: {turbo_method: :post }, class: "join-btn btn btn-lg"  do %>
         Join This Loop
       <% end %>
