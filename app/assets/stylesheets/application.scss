@@ -15,12 +15,13 @@
 @import "components/post";
 @import "components/postsdrop";
 @import "components/footer";
-@import "components/usercard";
 @import "components/community";
+@import "components/profile";
 
 // //body in all pages
 body {
   overflow-x: hidden;
+  font-family: $body-font;
   max-width: 100% !important;
 }
 

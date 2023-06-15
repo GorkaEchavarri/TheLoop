@@ -1,11 +1,8 @@
 <%= render "shared/banner"%>
-
-  <div class = "new form mx-5">
-    <%= render "posts/new"%>
-  </div>
+<div class="d-flex">
 
 
-<div class="containerish mx-5 my-5">
+<div class="containerish mx-1 my-5 w-75">
 
   <% @posts.each do |post| %>
 
@@ -68,14 +65,15 @@
         </svg>
       </div>
     </div>
-
     <div class="post-content mx-3">
+    <%= link_to post_path(post) do %>
       <div class="post-title">
         <h2><%=post.title %></h2>
       </div>
       <div class="postcontent my-3">
         <p><%=post.content%></p>
       </div>
+    <% end %>
       <div class="postimg d-flex justify-content-center my-5">
         <%= cl_image_tag post.photo.key, height: 500, width: 500, crop: :fill, style: "border-radius: 15px;" if post.photo.key.present?%>
       </div>
@@ -89,7 +87,9 @@
         </div>
         <div id="commentz" style="display: flex; align-items: center;">
           <i class="fa-regular fa-comment mx-1" style="color: #e22d06;"></i>
+          <%= link_to post_path(post) do %>
           <p class="post-comments"><%= post.comments.count %> Comments</p>
+          <% end %>
         </div>
       </div>
     </div>
@@ -98,10 +98,14 @@
   <%end%>
 </div>
 
+<div class = "new-form mx-2 w-25 h-50">
+  <%= render "posts/new"%>
+</div>
 
+</div>
 
 <div>
-  <%= link_to my_communities_path, { class: "pathbtn btn my-5" } do %>
+  <%= link_to my_communities_path, { class: "btn-outline-danger btn my-5" } do %>
     Back To My Loops
   <% end %>
 </div>
