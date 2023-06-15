@@ -136,3 +136,43 @@
   transform: scale(1.05);
   transition: transform .5s ease
 }
+
+.startbutton {
+
+background-color: $backgroundpink;
+color: $bloodred;
+
+}
+
+.startbutton:hover{
+
+  background-color: $bloodred;
+  color: white;
+
+  }
+
+
+.valuerow {
+  border-radius: 200px;
+  margin-top: -10px;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+  #value1 {
+    background-color: $backgroundpink;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 20px;
+    text-align: center;
+    color: $bloodred !important;
+
+
+    .row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+
+    }
+  }
