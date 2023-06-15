@@ -14,6 +14,21 @@
 </div>
 
 <h1>Your Loops</h1>
-<div class = "my-5">
-<h4> <%= link_to "You haven't subscribed to any Loops yet 😔 See all Loops?", communities_path %></h4>
-</div>
+<% if @my_loops.any? %>
+  <div class="communitygrid">
+    <% @my_loops.each do |my_loop|%>
+      <div class="communitiescard card m-3" style="width: 18rem; height: 9rem;">
+        <div class="card-body">
+          <%= link_to community_path(my_loop.id) do %>
+            <h4 class="card-title"><%=my_loop.title%></h4>
+            <p class="card-text"><%=my_loop.description%></p>
+          <%end%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class = "my-5">
+    <h4> <%= link_to "You haven't subscribed to any Loops yet 😔 See all Loops?", communities_path %></h4>
+  </div>
+<% end %>
