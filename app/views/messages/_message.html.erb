@@ -3,7 +3,7 @@
     <div id="message-<%= message.id %>">
       <small>
         <strong><%= message.user.username %></strong>
-        <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+        <i><%= (message.created_at + 1.hour).strftime("%a %b %e at %l:%M %p") %></i>
       </small>
       <p><%= message.content %></p>
     </div>
@@ -13,7 +13,7 @@
     <div id="message-<%= message.id %>">
       <small>
         <strong><%= message.user.username %></strong>
-        <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+        <i><%= (message.created_at + 1.hour).strftime("%a %b %e at %l:%M %p") %></i>
       </small>
       <p><%= message.content %></p>
     </div>

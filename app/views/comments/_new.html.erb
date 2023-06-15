@@ -1,6 +1,6 @@
-<div class = "my-3" style="margin-left: 3rem;">
+<div class = "my-5" style="margin-left: 3rem;">
 <%= simple_form_for [@post, @comment] do |f| %>
-  <%= f.input :content, label: "Add your comment to the discussion", :input_html => {:style => "height: 200px"} %>
-  <%= f.submit "Submit Comment!", class: "btn-outline-danger btn" %>
+  <%= f.input :content, label: false, placeholder: "Add Your Comment To The Discussion...", :input_html => {:style => "height: 200px"}, required: false  %>
+  <%= f.submit "Submit Comment!", class: "btn-outline-danger btn mt-3" %>
 <% end %>
 </div>
