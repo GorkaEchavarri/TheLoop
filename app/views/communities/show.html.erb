@@ -2,7 +2,7 @@
 <div class="d-flex">
 
 
-<div class="containerish mx-1 my-5 w-75">
+<div class="containerish mb-5" style="width: 70%; margin-right: 2rem;">
 
   <% @posts.each do |post| %>
 
@@ -22,31 +22,34 @@
         </div>
         <div class="options d-flex flex-row justify-content-end"; style="height: fit-content; margin-top: 1.5rem;";>
           <p class="post-pills mx-3"><%=user.user_type%></p>
-          <p class="post-pills mx-3"><%=user.status%></p>
+          <%if user.status%>
+            <p class="post-pills mx-3"><%=user.status%></p>
+          <%end%>
         </div>
       </div>
       <div class="w-25 d-flex flex-row-reverse" style="left: 50px; position: relative;">
         <div class="dropdown">
-          <input type="checkbox" id="dropdown">
+          <input type="checkbox" id="dropdown_<%= post.id %>">
 
-          <label class="dropdown__face" for="dropdown">
+          <label class="dropdown__face" for="dropdown_<%= post.id %>">
             <div class="dropdown__text"><br></div>
             <div class="dropdown__arrow"></div>
           </label>
 
-          <ul class="dropdown__items justify-content-center">
-            <%if current_user.id == post.user_id %>
+          <%if current_user.id == post.user_id %>
+            <ul class="dropdown__items justify-space-between">
               <li id="dropdown__list">
                 <%= link_to edit_post_path, data: { turbo_method: :get, turbo_confirm: "Are you sure you want to edit?"} do %>
-                  Edit This Post
+                  <i class="fa-solid fa-pen" style="color: #e22d06;"></i>
                 <%end%>
               </li>
               <li id="dropdown__list">
                 <%= link_to delete_post_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this post?"} do %>
-                  Delete This post
+                  <i class="fa-solid fa-trash" style="color: #e22d06;"></i>
                 <%end%>
               </li>
             <%else%>
+            <ul class="dropdown__items justify-content-center">
               <li id="dropdown__list">
                 <%= link_to flag_post_path(post), data: { turbo_method: :patch, turbo_confirm: "Are you sure you want to flag this post?"} do %>
                   <i class="fa-solid fa-flag" style="color: #e22d06;"></i>
@@ -54,15 +57,16 @@
               </li>
             <%end%>
           </ul>
-        </div>
 
-        <svg>
-          <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-          <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-          <feBlend in="SourceGraphic" in2="goo" />
-          </filter>
-        </svg>
+             <svg>
+                <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                <feBlend in="SourceGraphic" in2="goo" />
+                </filter>
+              </svg>
+
+        </div>
       </div>
     </div>
     <div class="post-content mx-3">
@@ -79,10 +83,10 @@
       </div>
     </div>
 
-    <div class="d-flex flex-row-reverse my-3">
+    <div class="d-flex flex-row-reverse">
       <div class="post-social-ctas">
         <div id="arrow" style="display: flex; align-items: center;">
-          <i class="fa-solid fa-circle-arrow-up mx-1" style="color: #e22d06;"></i>
+          <i class="fa-solid fa-circle-arrow-up mx-1" id="fa-arrow" style="color: #e22d06;"></i>
           <p class="post-votes"><%=%>Upvotes</p>
         </div>
         <div id="commentz" style="display: flex; align-items: center;">
@@ -98,7 +102,7 @@
   <%end%>
 </div>
 
-<div class = "new-form mx-2 w-25 h-50">
+<div class = "new-form mx-2 h-50" style="width: 30%;">
   <%= render "posts/new"%>
 </div>
 

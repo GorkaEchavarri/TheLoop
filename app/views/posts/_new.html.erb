@@ -1,7 +1,7 @@
 <h3>Submit New Post</h3>
 <%= simple_form_for [@community, @post] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content %>
-<%= f.input :photo, as: :file, label: "Upload a picture for your post", input_html: { class: "custom-file-input" } %>
-  <%= f.submit "Post", data: { disable_with: false }, class: "btn btn-outline-danger mx-auto" %>
+  <%= f.input :title, label: "Choose A Title" %>
+  <%= f.input :content, label: "Start A Discussion", :input_html => {:style => "height: 200px"} %>
+<%= f.input :photo, as: :file, label: "Upload A Picture For Your Post", input_html: { class: "custom-file-input" } %>
+  <%= f.submit "Submit Post!", data: { disable_with: false }, class: "btn btn-outline-danger mx-auto" %>
 <% end %>
