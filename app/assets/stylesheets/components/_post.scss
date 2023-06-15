@@ -25,11 +25,12 @@
     border-style: solid;
     border-color: $bloodred;
     border-width: 1px;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 8px;
     color: $bloodred;
     background-color: $barelythere;
     transition: color 0.2s ease-in-out;
+    font-size: 0.8rem;
   }
 
   .post-pills:hover {
@@ -60,16 +61,16 @@
 }
 
 .post-content p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 .post-votes,
 .post-comments {
   padding-right: 20px;
-  padding-top: 10px;
+  padding-top: 18px;
   color: $royalblood;
   transition: color 0.2s ease-in-out;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .post-votes:hover,
@@ -103,5 +104,5 @@
 .new-form {
   position: sticky;
   top: 20px;
-  margin-top: 95px;
+  margin-top: 3rem;
 }
