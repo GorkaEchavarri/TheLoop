@@ -11,7 +11,7 @@
             <img src="https://res.cloudinary.com/dgqqot40q/image/upload/v1686230942/TheLoop/placeholder_hfuoup.png" alt="A placeholder profile picture" height="60" width="60">
           <% end %>
           <strong><p id="card-name" style="color: #E22D06;margin: 10px;"><%= user.username%></p></strong>
-          <p style="color: #E22D06"><%= user.first_name%> | <%= user.age %> | <span id="card-user"><%= User::TYPES[user.user_type] %></span></p>
+          <p style="color: #E22D06"><%= user.first_name%> | <%=(Date.today - user.date_of_birth).fdiv(365).floor %> | <span id="card-user"><%= User::TYPES[user.user_type] %></span></p>
 
           <% if user.status %>
             <p id="card-status"><%= user.status %></p>
