@@ -67,7 +67,7 @@ user8.photo.attach(io: file8, filename: "User8.jpeg", content_type: "images/jpeg
 user8.save!
 
 file9 = File.open("./db/images/User9.png")
-user9 = User.create!(email: "sunny@lewagon.com", password: "123456", first_name: "Sunny", last_name: "Thapa", username: "Sunny", bio: "I'm Sunny, I've got Acute Leukaemia. I find solace in the realms of painting and books. Despite the challenges posed by my health, I immerse myself in vibrant strokes of colors, creating art that reflects my spirit's resilience. In the pages of books, I discover solace, knowledge, and endless worlds to explore. Through the brush and the written word, I defy the limitations imposed by my illness, allowing my creativity and imagination to flourish, bringing light into each moment. Message me to talk about anything :)", user_type: "In-treatment", status: "T-Cell ALL", date_of_birth: (Date.today - Date.today.year - 10025), region: "United Kingdom")
+user9 = User.create!(email: "sunny@lewagon.com", password: "123456", first_name: "Sunny", last_name: "Thapa", username: "Sunny", bio: "I'm Sunny, I've got Acute Leukaemia. I find solace in the realms of painting and books. Despite the challenges posed by my health, I immerse myself in vibrant strokes of colors, creating art that reflects my spirit's resilience. In the pages of books, I discover solace, knowledge, and endless worlds to explore. Through the brush and the written word, I defy the limitations imposed by my illness, allowing my creativity and imagination to flourish, bringing light into each moment. Message me to talk about anything :)", user_type: "In-treatment", status: "T-Cell ALL", date_of_birth: (Date.today - Date.today.year - 9025), region: "United Kingdom")
 user9.photo.attach(io: file9, filename: "User9.png", content_type: "images/png")
 user9.save!
 
@@ -81,9 +81,9 @@ user11 = User.create!(email: "richard@lewagon.com", password: "123456", first_na
 user11.photo.attach(io: file11, filename: "User11.jpeg", content_type: "images/jpeg")
 user11.save!
 
-file12 = File.open("./db/images/User12.jpeg")
-user12 = User.create!(email: "johnny@example.com", password: "123456", first_name: "Johnny", last_name: "Wordsworth", username: "JohnnyW", bio: "Hi friend :), I want to share my experiences, make new friends, and extend a helping hand to those in need. Through TheLoop, I want to share a supportive space where we can freely discuss the challenges and triumphs of the cancer journey. Together, we can inspire and uplift one another, fostering a community of strength, resilience, and unwavering support.", user_type: "In-treatment", status: "T-cell ALL", date_of_birth: (Date.today - Date.today.year - 10720), region: "United Kingdom")
-user12.photo.attach(io: file12, filename: "User12.jpeg", content_type: "images/jpeg")
+file12 = File.open("./db/images/Johnny.png")
+user12 = User.create!(email: "johnny@example.com", password: "123456", first_name: "Johnny", last_name: "Wordsworth", username: "JohnnyW", bio: "Hi friend :), I want to share my experiences, make new friends, and extend a helping hand to those in need. Through TheLoop, I want to share a supportive space where we can freely discuss the challenges and triumphs of the cancer journey. Together, we can inspire and uplift one another, fostering a community of strength, resilience, and unwavering support.", user_type: "In-treatment", status: "T-cell ALL", date_of_birth: (Date.today - Date.today.year - 9720), region: "United Kingdom")
+user12.photo.attach(io: file12, filename: "User12.jpeg", content_type: "images/png")
 user12.save!
 
 puts "creating communities"
