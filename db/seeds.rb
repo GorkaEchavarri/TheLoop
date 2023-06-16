@@ -32,7 +32,7 @@ user1.photo.attach(io: file, filename: "User1.jpg", content_type: "images/jpg")
 user1.save!
 puts "creating user 2"
 file2 = File.open("./db/images/User2.jpg")
-user2 = User.create!(email: "j@lewagon.com", password: "123456", first_name: "James", last_name: "McAvoy", username: "Jamesy360", bio: "I'm James, an avid fan of TheLoop. With an insatiable curiosity and a love for staying connected, TheLoop has become my digital sanctuary. From exploring the latest trends to engaging with a vibrant community, I find joy in every tap, swipe, and notification that this app brings into my life.", user_type: "Circle", status: "", date_of_birth: (Date.today - Date.today.year - 12020), region: "England")
+user2 = User.create!(email: "j@lewagon.com", password: "123456", first_name: "James", last_name: "McAvoy", username: "Jamesy360", bio: "I'm James, an avid fan of TheLoop. With an insatiable curiosity and a love for staying connected, TheLoop has become my digital sanctuary. From exploring the latest trends to engaging with a vibrant community, I find joy in every tap, swipe, and notification that this app brings into my life.", user_type: "Circle", date_of_birth: (Date.today - Date.today.year - 12020), region: "England")
 user2.photo.attach(io: file2, filename: "User2.jpg", content_type: "images/jpg")
 user2.save!
 
@@ -118,7 +118,7 @@ post1.save!
 post2 = Post.create!(title: "I have testicular cancer", content: "I have testicular cancer and I am looking for people to talk to about it", user_id: user2.id, community_id: comm2.id)
 post2.save!
 
-post3 = Post.create!(title: "Gym day after session", content: "How do you goes schedule your gym days after a Chemo Treatment?", user_id: user3.id, community_id: comm4.id)
+post3 = Post.create!(title: "Gym day after session", content: "How do you go about scheduling your gym days after a Chemo Treatment?", user_id: user3.id, community_id: comm4.id)
 post3.save!
 
 post12 = Post.create!(title: "Someone for a football team?", content: "Hello everyone! I'm looking to form a football team with fellow cancer fighters. Football has always been my passion, and I believe it can bring us together as a community. It doesn't matter if you're a beginner or an experienced player. Let's have fun, stay active, and support each other on and off the field. If you're interested, please leave a comment below or send me a private message. Looking forward to playing with you all! ", user_id: user5.id, community_id: comm4.id)

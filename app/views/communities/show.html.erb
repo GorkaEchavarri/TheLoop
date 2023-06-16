@@ -100,6 +100,12 @@
   </div>
   <% end %>
   <%end%>
+
+  <%if Post.where("community_id":@community.id)[0].nil? %>
+    <div class="mt-5">
+      <h3>No Posts In This Loop Yet 😔 Be The First?</h3>
+    </div>
+  <%end%>
 </div>
 
 <div class = "new-form mx-2 h-50" style="width: 30%;">

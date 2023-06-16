@@ -12,15 +12,23 @@
 
 
   <div class="button-container w-25 d-flex align-items-center justify-content-evenly flex-column">
-    <% if controller_name == 'communities' && action_name == 'show' && @membership.nil? %>
+    <% if (controller_name == 'communities' || controller_name == 'posts') && action_name == 'show' && @membership.nil?%>
       <%= link_to community_memberships_path(@community), data: {turbo_method: :post }, class: "join-btn btn btn-lg"  do %>
         Join This Loop
       <% end %>
-    <%else%>
-      <%= link_to community_memberships_path(@community), data: {turbo_method: :post }, class: "join-btn btn btn-lg disabled", style: "border-color: #e22d06; color: #e22d06;"  do %>
+      <% elsif @membership != nil %>
+        <%= link_to community_memberships_path(@community), data: {turbo_method: :post }, class: "join-btn btn btn-lg disabled"  do %>
+        Loop Already Joined!
+      <% end %>
+      <% else %>
+      <%= link_to community_memberships_path(@community), data: {turbo_method: :post }, class: "join-btn btn btn-lg disabled", style: "border-color: #e22d06; color: #e22d06;" do %>
         Loop Already Joined!
       <% end %>
     <% end %>
   </div>
 
 </div>
+
+
+<%# if memberships are nil join this loop %>
+<%# if memberships are not nil we want to display loop already joined %>
