@@ -10,7 +10,7 @@ gem "rails", "~> 7.0.5"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "pg", "~> 1.1"
+gem "pg"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -31,6 +31,8 @@ gem "jbuilder"
 gem "redis", "~> 4.0"
 
 gem "devise"
+
+gem 'github-pages', group: :jekyll_plugins
 
 gem "simple_form"
 
