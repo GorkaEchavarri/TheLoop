@@ -9,6 +9,10 @@ Made on Ruby on Rails and Stimulus JS, using PostgreSQL for the database, Bootst
 
 ## Visuals
 
+<img src="app/assets/images/TheLoopImage1.png" width="600">
+<img src="app/assets/images/TheLoopImage3.png" width="600">
+<img src="app/assets/images/TheLoopImage2.png" width="600">
+
 ## Authors and acknowledgment
  InTheLoop was the final project made by TheLoop team while studying at Le Wagon bootcamp in London.
  
