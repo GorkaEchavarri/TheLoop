@@ -5,6 +5,15 @@
 A place for anyone impacted by Cancer, whether you have been diagnosed or are supporting a loved one.
 Support Platform for cancer patients and family members who wants to share feelings, experiences and generally a safe space for people to connect.
 
+-Real life problem
+-Misguided information and no current platform
+-Personnal experience
+-Tabu
+-1 in 2 men and women will be diagnosed with the disease at some point in their lives.
+Team effort, done in 2 weeeks while studying at Le Wagon Bootcamp, final project.
+
+
+
 Made on Ruby on Rails and Stimulus JS, using PostgreSQL for the database, Bootstraps for the SCSS and Websocket and Action Cable for a chatroom feature.
 
 ## Visuals
