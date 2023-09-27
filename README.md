@@ -12,8 +12,8 @@ That's why we decided to create this platform, that it should no longer be a tab
 
 Through a collaborative effort, we have build this social network, offering a platform for heartfelt conversations, the creation of insightful posts, and the sharing of deeply personal experiences.
 
-The project was done in 2 weeeks while studying at Le Wagon Bootcamp as the final project.
-Made on Ruby on Rails and Stimulus JS, using PostgreSQL for the database, Bootstraps for the SCSS and Websocket and Action Cable for a chatroom feature.
+The project was done in two weeeks during our immersive journey at Le Wagon Bootcamp.
+Made on Ruby on Rails and Stimulus JS, using PostgreSQL for the database, Bootstraps for the SCSS and Websocket and Action Cable for a real-time chatroom feature.
 
 ## Visuals
 
