@@ -5,15 +5,14 @@
 A place for anyone impacted by Cancer, whether you have been diagnosed or are supporting a loved one.
 Support Platform for cancer patients and family members who wants to share feelings, experiences and generally a safe space for people to connect.
 
--Real life problem
--Misguided information and no current platform
--Personnal experience
--Tabu
--1 in 2 men and women will be diagnosed with the disease at some point in their lives.
-Team effort, done in 2 weeeks while studying at Le Wagon Bootcamp, final project.
+The inspiration for this app sprang from deeply personal experiences within our team. We recognized there are no websites or online networks that truly catered to the needs of those battling this illness. There is a lot of misinformation and pseudo-science which makes hard to navigate the labyrinth of pseudo science and real experiences. 
+The feeling of being alone and isolated in such a hardship is heartbreaking.
 
+That's why we decided to create this platform, that it should no longer be a taboo subject. In fact, recent studies reveal that a staggering 1 in 2 men and women will confront this disease at some point in their lives.
 
+Through a collaborative effort, we have build this social network, offering a platform for heartfelt conversations, the creation of insightful posts, and the sharing of deeply personal experiences.
 
+The project was done in 2 weeeks while studying at Le Wagon Bootcamp as the final project.
 Made on Ruby on Rails and Stimulus JS, using PostgreSQL for the database, Bootstraps for the SCSS and Websocket and Action Cable for a chatroom feature.
 
 ## Visuals
